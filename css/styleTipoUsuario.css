@@ -1,0 +1,283 @@
+/* =================== Global Styles & Variables =================== */
+
+:root {
+  --cor-principal: #1f1f9e;
+  --cor-secundaria: #645af5;
+  --cor-white: #ffffff;
+  --cor-preta: #000000;
+  --cor-cinza: #ac9e9e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =================== Navbar =================== */
+
+.titulo {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0px 0px 0px 2.5rem;
+}
+
+.background-principal {
+  background-color: var(--cor-principal);
+}
+
+.icon-navbar {
+  padding-right: 50px;
+}
+
+/* =================== Hero Section =================== */
+
+.hero-section {
+  position: relative;
+  height: 65vh;
+  background-image: url("../images/BackGround.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* =================== Search Bar =================== */
+
+#s {
+  background: var(--cor-secundaria)
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>')
+    no-repeat 14px center;
+  text-indent: 1em;
+  display: inline-block;
+  border: 0 none;
+  width: 3em; /* Largura inicial */
+  height: 3em;
+  border-radius: 3em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  color: var(--cor-white);
+}
+
+#s:hover,
+#s:focus {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>');
+  color: var(--cor-white);
+}
+
+#s:focus {
+  width: 100%;
+  cursor: text;
+}
+
+#s:focus::placeholder {
+  color: var(--cor-white);
+}
+
+/* =================== Tipo de Usuario =================== */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.header h1 {
+  color: var(--cor-preta);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header p {
+  color: var(--cor-cinza);
+  font-size: 1.125rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.user-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--cor-principal),
+    var(--cor-secundaria)
+  ); /* #667eea, #764ba2*/
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.user-card:hover::before {
+  transform: scaleX(1);
+}
+
+.user-card.selected {
+  border: 2px solid var(--cor-secundaria);
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8ebff 100%);
+}
+
+.user-card.selected::before {
+  transform: scaleX(1);
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(
+    135deg,
+    var(--cor-principal) 0%,
+    var(--cor-secundaria) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.user-card:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+.icon-wrapper svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #e8ebff;
+  color: #667eea;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.user-card.selected .card-badge {
+  background: #667eea;
+  color: white;
+}
+
+.continue-button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 16px 48px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.continue-button.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.continue-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.continue-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================== Footer =================== */
+
+.footer-container {
+  margin-top: 1rem;
+}
