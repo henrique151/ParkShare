@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condomínio - Informações</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styleGlobal.css">
+    <link rel="stylesheet" href="/css/styleCondominio.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg background-principal">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light titulo" href="/index.html">ParkShare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Nossos serviços</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pages/tipoUsuario.html"><i
+                                class="bi bi-person fs-2 text-light icon-navbar"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="condo-card">
+        <div class="condo-image-container">
+            <img src="/images/Condominio 1.png" alt="Condomínio" class="condo-image">
+        </div>
+
+        <h1 class="condo-title">Isto é um Condomínio, confia</h1>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-clipboard-list stat-icon"></i>
+                <div class="stat-label">Vagas Registradas</div>
+                <div class="stat-value">20</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-parking stat-icon"></i>
+                <div class="stat-label">Vagas Disponíveis</div>
+                <div class="stat-value">6</div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-custom" onclick="handleSolicitar()">
+                <i class="fas fa-paper-plane"></i>Solicitar
+            </button>
+            <button class="btn btn-custom" onclick="handleVerLocal()">
+                <i class="fas fa-map-marker-alt"></i>Ver Local
+            </button>
+        </div>
+
+        <a href="/pages/chat.html">
+            <button class="btn btn-custom btn-chat" onclick="handleChat()">
+                <i class="fas fa-comments"></i>Chat
+            </button>
+        </a>
+    </div>
+    <footer class="background-principal footer-container">
+        <div class="container py-5">
+            <div class="row text-center justify-content-center">
+                <div class="col-md-4">
+                    <h5 class="text-white">Quem somos?</h1>
+                        <small class="d-block mb-3 text-white">ParkShare &copy; 2025</small>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-white">Contate-nos!</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="link-secondary"><i class="bi bi-instagram fs-2 text-white"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="link-secondary"><i class="bi bi-whatsapp fs-2 text-white"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-white">Ajuda? </h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="link-secondary text-decoration-none text-white" href="#">Sobre Site</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
