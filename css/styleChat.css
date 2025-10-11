@@ -1,3 +1,7 @@
+:root {
+  --color-titulo: #0000ff;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,5 +1,7 @@
 :root {
   --color-titulo: #0000ff;
+  --cor-principal: #1f1f9e;
+  --cor-secundaria: #645af5;
   --color-preto: #000000;
   --color-cinza: #ac9e9e;
   --background-principal: #ffffff;
@@ -124,14 +126,11 @@ body {
   font-weight: bold;
 }
 
-.conta > p,a {
-    font-weight: bold;
+.conta > p,
+a {
+  font-weight: bold;
 }
 
 .link-a {
-    color: var(--color-titulo);
+  color: var(--color-titulo);
 }
-
-
-
-  
