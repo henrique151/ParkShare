@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Imóvel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para página de detalhes */
+        .details-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 16px var(--shadow-lg);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background-color: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+            transform: translateX(-4px);
+        }
+
+        .property-image-large {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px var(--shadow-md);
+        }
+
+        .property-header {
+            margin-bottom: 30px;
+        }
+
+        .property-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .property-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 20px;
+        }
+
+        .property-features {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .property-description {
+            line-height: 1.8;
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .contact-button {
+            padding: 16px 40px;
+            background-color: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--shadow-md);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">🏠 Logo</div>
+        <div class="nav-links">
+            <button class="nav-link">Link</button>
+            <button class="nav-link">Link</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="#imoveis" class="dropdown-item">Imóveis</a>
+                    <a href="#sobre" class="dropdown-item">Sobre Nós</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#ajuda" class="dropdown-item">Ajuda</a>
+                </div>
+            </div>
+            <div class="user-icon">👤</div>
+        </div>
+    </header>
+
+    <!-- Container de detalhes -->
+    <div class="details-container">
+        <a href="index.html" class="back-button">← Voltar</a>
+
+        <img id="propertyImage" class="property-image-large" src="/placeholder.svg" alt="Imóvel">
+
+        <div class="property-header">
+            <h1 class="property-title" id="propertyAddress">Carregando...</h1>
+            <div class="property-price" id="propertyPrice">R$ 0</div>
+        </div>
+
+        <div class="property-features">
+            <div class="feature-item">
+                <span>🛏️</span>
+                <span id="propertyBedrooms">0 Quartos</span>
+            </div>
+            <div class="feature-item">
+                <span>🚿</span>
+                <span id="propertyBathrooms">0 Banheiros</span>
+            </div>
+            <div class="feature-item">
+                <span>📐</span>
+                <span id="propertyArea">0m²</span>
+            </div>
+        </div>
+
+        <div class="property-description" id="propertyDescription">
+            Carregando descrição...
+        </div>
+
+        <button class="contact-button" onclick="alert('Funcionalidade de contato em desenvolvimento!')">
+            Entrar em Contato
+        </button>
+    </div>
+
+    <script>
+        // Inicializa tema
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (systemPrefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+        // Menu dropdown
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        menuToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!menuToggle.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Carrega detalhes do imóvel
+        async function loadPropertyDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const propertyId = parseInt(urlParams.get('id'));
+
+            try {
+                const response = await fetch('cardInfo.json');
+                const data = await response.json();
+
+                // Busca o imóvel em todas as regiões
+                let property = null;
+                for (const region in data) {
+                    property = data[region].find(p => p.id === propertyId);
+                    if (property) break;
+                }
+
+                if (property) {
+                    document.getElementById('propertyImage').src = property.image;
+                    document.getElementById('propertyAddress').textContent = property.address;
+                    document.getElementById('propertyPrice').textContent = property.price;
+                    document.getElementById('propertyBedrooms').textContent = `${property.bedrooms} Quartos`;
+                    document.getElementById('propertyBathrooms').textContent = `${property.bathrooms} Banheiros`;
+                    document.getElementById('propertyArea').textContent = property.area;
+                    document.getElementById('propertyDescription').textContent = property.description;
+                } else {
+                    document.querySelector('.details-container').innerHTML = '<h1>Imóvel não encontrado</h1>';
+                }
+            } catch (error) {
+                console.error('[v0] Erro ao carregar detalhes:', error);
+                document.querySelector('.details-container').innerHTML = '<h1>Erro ao carregar detalhes</h1>';
+            }
+        }
+
+        initTheme();
+        loadPropertyDetails();
+    </script>
+</body>
+
+</html>

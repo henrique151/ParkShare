@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Imóveis</title>
+    <!-- Linkando arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">🏠 Logo</div>
+        <div class="nav-links">
+            <button class="nav-link">Link</button>
+            <button class="nav-link">Link</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#inicio" class="dropdown-item">Início</a>
+                    <a href="#imoveis" class="dropdown-item">Imóveis</a>
+                    <a href="#sobre" class="dropdown-item">Sobre Nós</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#ajuda" class="dropdown-item">Ajuda</a>
+                </div>
+            </div>
+            <div class="user-icon">👤</div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Buscar endereço...">
+            <span class="map-icon" id="mapIcon" title="Ver no mapa">🗺️</span>
+        </div>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="mainContainer">
+        <!-- Os carrosséis serão renderizados aqui dinamicamente via JavaScript -->
+    </div>
+
+    <!-- Footer detalhado com múltiplas colunas -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3 class="footer-title">Sobre Nós</h3>
+                <p class="footer-text">
+                    Somos especialistas em encontrar o imóvel perfeito para você.
+                    Com anos de experiência no mercado imobiliário, oferecemos as melhores opções.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">💼</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#imoveis">Imóveis</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Serviços</h3>
+                <ul class="footer-links">
+                    <li><a href="#comprar">Comprar Imóvel</a></li>
+                    <li><a href="#vender">Vender Imóvel</a></li>
+                    <li><a href="#alugar">Alugar Imóvel</a></li>
+                    <li><a href="#avaliar">Avaliação</a></li>
+                    <li><a href="#consultoria">Consultoria</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Contato</h3>
+                <ul class="footer-contact">
+                    <li>📞 (11) 1234-5678</li>
+                    <li>📧 contato@imoveis.com</li>
+                    <li>📍 São Paulo, SP</li>
+                    <li>🕐 Seg-Sex: 9h-18h</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Imóveis. Todos os direitos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#privacidade">Privacidade</a>
+                <span>|</span>
+                <a href="#termos">Termos de Uso</a>
+                <span>|</span>
+                <a href="#cookies">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Linkando arquivo JavaScript externo -->
+    <script src="main.js"></script>
+</body>
+
+</html>

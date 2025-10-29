@@ -1,0 +1,106 @@
+{
+  "sao-miguel": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=480&h=280&fit=crop",
+      "address": "Rua da Consolação, 234 - São Miguel",
+      "placeholder": "",
+      "price": "R$ 850.000",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": "120m²",
+      "description": "Linda casa com 3 quartos, amplo jardim e garagem para 2 carros. Localização privilegiada próximo a escolas e comércio."
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=480&h=280&fit=crop",
+      "address": "Av. Rebouças, 567 - São Miguel",
+      "placeholder": "",
+      "price": "R$ 650.000",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": "85m²",
+      "description": "Apartamento moderno com acabamento de primeira, varanda gourmet e vaga de garagem. Condomínio com piscina e academia."
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=480&h=280&fit=crop",
+      "address": "Rua Oscar Freire, 890 - São Miguel",
+      "placeholder": "",
+      "price": "R$ 1.200.000",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": "180m²",
+      "description": "Casa de alto padrão com arquitetura contemporânea, piscina, churrasqueira e área de lazer completa."
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&h=280&fit=crop",
+      "address": "Av. Radial Leste, 579 - São Miguel",
+      "placeholder": "",
+      "price": "R$ 720.000",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": "95m²",
+      "description": "Apartamento espaçoso com vista panorâmica, 2 vagas de garagem e armários planejados em todos os cômodos."
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=480&h=280&fit=crop",
+      "address": "Av. Radial Leste, 579 - Itaquera",
+      "placeholder": "",
+      "price": "R$ 750.000",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": "100m²",
+      "description": "Apartamento com excelente localização, próximo a shopping e transporte público. Pronto para morar."
+    }
+  ],
+
+  "itaquera": [
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=480&h=280&fit=crop",
+      "address": "Av. Aricanduva, 135 - Itaquera",
+      "placeholder": "",
+      "price": "R$ 580.000",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "area": "70m²",
+      "description": "Apartamento aconchegante próximo ao metrô, ideal para casal ou pequena família. Condomínio com segurança 24h."
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=480&h=280&fit=crop",
+      "address": "Rua José Bonifácio, 246 - Itaquera",
+      "placeholder": "",
+      "price": "R$ 890.000",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": "110m²",
+      "description": "Casa térrea reformada com quintal amplo, perfeita para quem busca tranquilidade e espaço para a família."
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=480&h=280&fit=crop",
+      "address": "Av. Radial Leste, 579 - Itaquera",
+      "placeholder": "",
+      "price": "R$ 750.000",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": "100m²",
+      "description": "Apartamento com excelente localização, próximo a shopping e transporte público. Pronto para morar."
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&h=280&fit=crop",
+      "address": "Av. Radial Leste, 579 - São Miguel",
+      "placeholder": "",
+      "price": "R$ 720.000",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": "95m²",
+      "description": "Apartamento espaçoso com vista panorâmica, 2 vagas de garagem e armários planejados em todos os cômodos."
+    }
+  ]
+}
