@@ -2,105 +2,104 @@
   "sao-miguel": [
     {
       "id": 1,
-      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=480&h=280&fit=crop",
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop",
       "address": "Rua da Consolação, 234 - São Miguel",
-      "placeholder": "",
-      "price": "R$ 850.000",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "area": "120m²",
-      "description": "Linda casa com 3 quartos, amplo jardim e garagem para 2 carros. Localização privilegiada próximo a escolas e comércio."
+      "city": "São Paulo",
+      "cep": "08085-000",
+      "vagas_disponiveis": 2,
+      "vagas_totais": 10,
+      "horario_funcionamento": "05:00 - 23:00",
+      "descricao": "Condomínio moderno com segurança 24h, portaria atenta e vagas bem conservadas. Localizado em área estratégica próximo a comércio."
     },
     {
       "id": 2,
-      "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=480&h=280&fit=crop",
+      "image": "https://images.unsplash.com/photo-1681751864665-f07e8a462c49?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688",
       "address": "Av. Rebouças, 567 - São Miguel",
-      "placeholder": "",
-      "price": "R$ 650.000",
-      "bedrooms": 2,
-      "bathrooms": 2,
-      "area": "85m²",
-      "description": "Apartamento moderno com acabamento de primeira, varanda gourmet e vaga de garagem. Condomínio com piscina e academia."
+      "city": "São Paulo",
+      "cep": "08085-100",
+      "vagas_disponiveis": 1,
+      "vagas_totais": 8,
+      "horario_funcionamento": "05:30 - 22:00",
+      "descricao": "Condomínio residencial com piscina, academia e portaria. Vagas limpas e bem iluminadas. Ótima localização para trabalho."
     },
     {
       "id": 3,
-      "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=480&h=280&fit=crop",
+      "image": "https://plus.unsplash.com/premium_photo-1678386645963-3f5b0bdb8dcd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzh8fGNvbmRvbWluaXVtfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500",
       "address": "Rua Oscar Freire, 890 - São Miguel",
-      "placeholder": "",
-      "price": "R$ 1.200.000",
-      "bedrooms": 4,
-      "bathrooms": 3,
-      "area": "180m²",
-      "description": "Casa de alto padrão com arquitetura contemporânea, piscina, churrasqueira e área de lazer completa."
+      "city": "São Paulo",
+      "cep": "08085-200",
+      "vagas_disponiveis": 3,
+      "vagas_totais": 15,
+      "horario_funcionamento": "04:00 - 23:30",
+      "descricao": "Condomínio premium com vigilância reforçada, câmeras em todas as vagas e sistema de controle de acesso automatizado."
     },
     {
       "id": 4,
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&h=280&fit=crop",
+      "image": "https://plus.unsplash.com/premium_photo-1679759526816-8d79212839ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688",
       "address": "Av. Radial Leste, 579 - São Miguel",
-      "placeholder": "",
-      "price": "R$ 720.000",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "area": "95m²",
-      "description": "Apartamento espaçoso com vista panorâmica, 2 vagas de garagem e armários planejados em todos os cômodos."
+      "city": "São Paulo",
+      "cep": "08085-300",
+      "vagas_disponiveis": 2,
+      "vagas_totais": 12,
+      "horario_funcionamento": "05:00 - 22:00",
+      "descricao": "Condomínio com estacionamento coberto, elevador de acesso e portaria monitorada constantemente."
     },
-    {
-      "id": 7,
-      "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=480&h=280&fit=crop",
-      "address": "Av. Radial Leste, 579 - Itaquera",
-      "placeholder": "",
-      "price": "R$ 750.000",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "area": "100m²",
-      "description": "Apartamento com excelente localização, próximo a shopping e transporte público. Pronto para morar."
-    }
-  ],
-
-  "itaquera": [
     {
       "id": 5,
-      "image": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=480&h=280&fit=crop",
-      "address": "Av. Aricanduva, 135 - Itaquera",
-      "placeholder": "",
-      "price": "R$ 580.000",
-      "bedrooms": 2,
-      "bathrooms": 1,
-      "area": "70m²",
-      "description": "Apartamento aconchegante próximo ao metrô, ideal para casal ou pequena família. Condomínio com segurança 24h."
-    },
+      "image": "https://plus.unsplash.com/premium_photo-1672574474203-19e61904670f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735",
+      "address": "Av. Radial Leste, 579 - São Miguel",
+      "city": "São Paulo",
+      "cep": "08085-300",
+      "vagas_disponiveis": 2,
+      "vagas_totais": 12,
+      "horario_funcionamento": "05:00 - 22:00",
+      "descricao": "Condomínio com estacionamento coberto, elevador de acesso e portaria monitorada constantemente."
+    }
+  ],
+  "itaquera": [
     {
       "id": 6,
-      "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=480&h=280&fit=crop",
-      "address": "Rua José Bonifácio, 246 - Itaquera",
-      "placeholder": "",
-      "price": "R$ 890.000",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "area": "110m²",
-      "description": "Casa térrea reformada com quintal amplo, perfeita para quem busca tranquilidade e espaço para a família."
+      "image": "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=500&fit=crop",
+      "address": "Av. Aricanduva, 135 - Itaquera",
+      "city": "São Paulo",
+      "cep": "08210-000",
+      "vagas_disponiveis": 4,
+      "vagas_totais": 20,
+      "horario_funcionamento": "05:00 - 23:00",
+      "descricao": "Grande condomínio residencial próximo ao metrô. Amplo estacionamento com vagas cobertas e descobertas."
     },
     {
       "id": 7,
-      "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=480&h=280&fit=crop",
-      "address": "Av. Radial Leste, 579 - Itaquera",
-      "placeholder": "",
-      "price": "R$ 750.000",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "area": "100m²",
-      "description": "Apartamento com excelente localização, próximo a shopping e transporte público. Pronto para morar."
+      "image": "https://plus.unsplash.com/premium_photo-1742418127279-c9a43d9acf2a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=765",
+      "address": "Rua José Bonifácio, 246 - Itaquera",
+      "city": "São Paulo",
+      "cep": "08210-100",
+      "vagas_disponiveis": 1,
+      "vagas_totais": 6,
+      "horario_funcionamento": "06:00 - 21:00",
+      "descricao": "Condomínio aconchegante e seguro com vagas bem distribuídas. Portaria disponível para orientações."
     },
     {
-      "id": 4,
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=480&h=280&fit=crop",
-      "address": "Av. Radial Leste, 579 - São Miguel",
-      "placeholder": "",
-      "price": "R$ 720.000",
-      "bedrooms": 3,
-      "bathrooms": 2,
-      "area": "95m²",
-      "description": "Apartamento espaçoso com vista panorâmica, 2 vagas de garagem e armários planejados em todos os cômodos."
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1620691538154-9cac849dea06?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
+      "address": "Av. Radial Leste, 579 - Itaquera",
+      "city": "São Paulo",
+      "cep": "08210-200",
+      "vagas_disponiveis": 2,
+      "vagas_totais": 10,
+      "horario_funcionamento": "05:00 - 23:00",
+      "descricao": "Condomínio moderno com sistema de reserva integrado e vagas adaptadas para PCD."
+    },
+    {
+      "id": 9,
+      "image": "https://images.unsplash.com/photo-1668762993039-cbd1412b201c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=692",
+      "address": "Av. Radial Leste, 579 - Itaquera",
+      "city": "São Paulo",
+      "cep": "08210-200",
+      "vagas_disponiveis": 2,
+      "vagas_totais": 10,
+      "horario_funcionamento": "05:00 - 23:00",
+      "descricao": "Condomínio moderno com sistema de reserva integrado e vagas adaptadas para PCD."
     }
   ]
 }

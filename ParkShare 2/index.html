@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca de Imóveis</title>
+    <title>Park-Share - Compartilhe Vagas de Estacionamento</title>
     <!-- Linkando arquivo CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">🏠 Logo</div>
+        <!-- Alterado logo e título para Park-Share -->
+        <div class="logo"><a href="index.html">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Link</button>
-            <button class="nav-link">Link</button>
+            <button class="nav-link">Como Funciona</button>
+            <button class="nav-link">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,10 +28,10 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="#inicio" class="dropdown-item">Início</a>
-                    <a href="#imoveis" class="dropdown-item">Imóveis</a>
-                    <a href="#sobre" class="dropdown-item">Sobre Nós</a>
+                    <a href="#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
                     <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#ajuda" class="dropdown-item">Ajuda</a>
+                    <a href="#faq" class="dropdown-item">FAQ</a>
                 </div>
             </div>
             <div class="user-icon">👤</div>
@@ -40,7 +42,8 @@
     <div class="search-container">
         <div class="search-bar">
             <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" id="searchInput" placeholder="Buscar endereço...">
+            <!-- Alterado placeholder para busca de vagas -->
+            <input type="text" class="search-input" id="searchInput" placeholder="Buscar vagas por endereço...">
             <span class="map-icon" id="mapIcon" title="Ver no mapa">🗺️</span>
         </div>
         <div class="search-suggestions" id="searchSuggestions"></div>
@@ -55,10 +58,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3 class="footer-title">Sobre Nós</h3>
+                <h3 class="footer-title">Sobre Park-Share</h3>
                 <p class="footer-text">
-                    Somos especialistas em encontrar o imóvel perfeito para você.
-                    Com anos de experiência no mercado imobiliário, oferecemos as melhores opções.
+                    Platform de compartilhamento de vagas de estacionamento em condomínios.
+                    Conectamos motoristas a vagas seguras e regulamentadas em São Paulo.
                 </p>
                 <div class="footer-social">
                     <a href="#" class="social-link">📘</a>
@@ -72,37 +75,37 @@
                 <h3 class="footer-title">Links Rápidos</h3>
                 <ul class="footer-links">
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#imoveis">Imóveis</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#vagas">Buscar Vagas</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#seguranca">Segurança</a></li>
                     <li><a href="#blog">Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3 class="footer-title">Serviços</h3>
+                <h3 class="footer-title">Recursos</h3>
                 <ul class="footer-links">
-                    <li><a href="#comprar">Comprar Imóvel</a></li>
-                    <li><a href="#vender">Vender Imóvel</a></li>
-                    <li><a href="#alugar">Alugar Imóvel</a></li>
-                    <li><a href="#avaliar">Avaliação</a></li>
-                    <li><a href="#consultoria">Consultoria</a></li>
+                    <li><a href="#buscar">Buscar Vagas</a></li>
+                    <li><a href="#disponibilizar">Disponibilizar Vaga</a></li>
+                    <li><a href="#gerenciar">Gerenciar Reservas</a></li>
+                    <li><a href="#avaliacao">Avaliações</a></li>
+                    <li><a href="#suporte">Suporte</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
                 <h3 class="footer-title">Contato</h3>
                 <ul class="footer-contact">
-                    <li>📞 (11) 1234-5678</li>
-                    <li>📧 contato@imoveis.com</li>
+                    <li>📞 (11) 9999-8888</li>
+                    <li>📧 suporte@park-share.com</li>
                     <li>📍 São Paulo, SP</li>
-                    <li>🕐 Seg-Sex: 9h-18h</li>
+                    <li>🕐 Seg-Dom: 6h-22h</li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Imóveis. Todos os direitos reservados.</p>
+            <p>© 2025 Park-Share. Todos os direitos reservados.</p>
             <div class="footer-bottom-links">
                 <a href="#privacidade">Privacidade</a>
                 <span>|</span>
@@ -114,7 +117,7 @@
     </footer>
 
     <!-- Linkando arquivo JavaScript externo -->
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,361 @@
+/* ========================================
+   PÁGINA DE DETALHES - LAYOUT EM DOIS LADOS
+   ======================================== */
+
+.details-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px var(--shadow-lg);
+}
+
+/* Layout responsivo: grid em desktop, stack em mobile */
+.details-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Botão voltar posicionado no topo */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+  transform: translateX(-4px);
+}
+
+/* Seção de imagem com bordas arredondadas e sombra */
+.image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Aumentado tamanho da imagem */
+.property-image-large {
+  width: 100%;
+  height: 620px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px var(--shadow-lg);
+  border: 2px solid var(--border-color);
+}
+
+/* Seção de informações estruturada */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Header com endereço e informação principal */
+.property-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 20px;
+}
+
+.property-address {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.property-location {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Alterado para mostrar vagas disponíveis e taxa */
+.property-highlights {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highlight-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+/* Grid de características (vagas, horário, etc) */
+.property-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--card-bg);
+  transform: translateY(-2px);
+}
+
+.feature-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.feature-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Descrição */
+.property-description {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 16px;
+  background-color: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-primary);
+}
+
+/* Informações adicionais */
+.property-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-icon {
+  font-size: 20px;
+  min-width: 24px;
+}
+
+/* Botões de ação */
+.action-buttons {
+  display: flex;
+  gap: 16px;
+
+  justify-content: space-between;
+}
+
+.contact-button,
+.local-button {
+  width: 100%;
+  padding: 14px 24px;
+  border: 2px solid var(--accent-primary);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-button {
+  background-color: var(--accent-primary);
+  color: white;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow-md);
+}
+
+.local-button {
+  background-color: transparent;
+  color: var(--accent-primary);
+}
+
+.local-button:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Responsividade: mobile e tablet */
+@media (max-width: 1024px) {
+  .details-container {
+    padding: 30px;
+    margin: 30px auto;
+  }
+
+  .details-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .property-image-large {
+    height: 400px;
+  }
+
+  .property-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .details-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .property-image-large {
+    height: 350px;
+  }
+
+  .property-address {
+    font-size: 20px;
+  }
+
+  .property-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .feature-item {
+    padding: 12px;
+  }
+
+  .feature-value {
+    font-size: 16px;
+  }
+
+  .property-description {
+    font-size: 15px;
+    padding: 16px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .contact-button,
+  .local-button {
+    width: 100%;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .details-container {
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 12px;
+  }
+
+  .property-image-large {
+    height: 280px;
+    border-radius: 12px;
+  }
+
+  .property-address {
+    font-size: 18px;
+  }
+
+  .property-location {
+    font-size: 13px;
+  }
+
+  .property-features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .feature-item {
+    padding: 10px;
+  }
+
+  .feature-label {
+    font-size: 11px;
+  }
+
+  .feature-value {
+    font-size: 15px;
+  }
+
+  .property-description {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .property-info {
+    font-size: 14px;
+  }
+
+  .contact-button,
+  .local-button {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .property-highlights {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
