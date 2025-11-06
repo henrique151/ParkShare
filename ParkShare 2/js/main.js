@@ -399,7 +399,7 @@ function setupEventListeners() {
 }
 
 // ========================================
-// INICIALIZAÇÃO
+// INICIALIZAÇ��O
 // ========================================
 
 document.addEventListener("DOMContentLoaded", async () => {

@@ -92,24 +92,25 @@ function setupEventListeners() {
         carroCor: "Preto",
       };
 
-      const message = `Olá ${reservation.profile.nome}! 
+      // Extrair horário de início e fim
+      const horarioParts = reservation.profile.horario.split(" - ");
+      const startTime = horarioParts[0] || "08:00";
+      const endTime = horarioParts[1] || "18:00";
 
-Meu nome é ${userData.nome} e gostaria de alugar sua vaga de estacionamento.
+      // Criar URL com parâmetros para o chat
+      const params = new URLSearchParams({
+        userName: userData.nome,
+        condominiumName: reservation.profile.nome,
+        startDate: formatDate(reservation.startDate),
+        endDate: formatDate(reservation.endDate),
+        startTime: startTime,
+        endTime: endTime,
+        carModel: userData.carroModelo,
+        carColor: userData.carroCor,
+      });
 
-📅 Período: ${formatDate(reservation.startDate)} até ${formatDate(
-        reservation.endDate
-      )}
-⏰ Horário: ${reservation.profile.horario}
-🚗 Veículo: ${userData.carroModelo} (${userData.carroCor})
-
-Aguardo seu retorno para confirmarmos os detalhes.
-
-Obrigado!`;
-
-      alert(`Mensagem que será enviada:\n\n${message}`);
-
-      // Aqui você pode implementar o redirecionamento para o chat
-      // window.location.href = `chat.html?message=${encodeURIComponent(message)}`
+      // Redirecionar para o chat
+      window.location.href = `chat.html?${params.toString()}`;
     }
   });
 }

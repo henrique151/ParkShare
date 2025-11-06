@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Pedido - Síndico | Park-Share</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/confirmacao-sindico.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="nav-links">
+            <button class="nav-link">Dashboard</button>
+            <button class="nav-link">Pedidos</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="sindico.html" class="dropdown-item">Voltar</a>
+                    <a href="#" class="dropdown-item">Sair</a>
+                </div>
+            </div>
+            <div class="user-icon">👨‍💼</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="confirmacao-sindico-page">
+        <div class="confirmacao-container">
+            <button class="back-button" onclick="window.history.back()" title="Voltar">
+                ← Voltar
+            </button>
+
+            <h1 class="page-title">Confirmação de Pedido</h1>
+
+            <!-- Informações do Condomínio -->
+            <div class="info-section condominio-section">
+                <div class="section-header">
+                    <h2 class="section-title">🏢 Informações da Vaga</h2>
+                </div>
+                <div class="info-card">
+                    <div class="info-item">
+                        <span class="info-label">Código do Pedido:</span>
+                        <span class="info-value" id="codigoPedido">#PED001</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nome do Condomínio:</span>
+                        <span class="info-value" id="nomeCondominio">José dos Santos</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Local da Vaga:</span>
+                        <span class="info-value" id="localVaga">10, Pátio 3</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hora que irá alugar:</span>
+                        <span class="info-value" id="horarioAluguel">09:00 - 12:00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dias reservados:</span>
+                        <span class="info-value" id="diasReservados">22/10/2025 a 31/12/2025</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn info" id="consultarSindicoBtn">👁️ Consultar Síndico</button>
+                    <button class="action-btn warning" id="bloquearSindicoBtn">🚫 Bloquear Síndico</button>
+                </div>
+            </div>
+
+            <!-- Informações do Usuário Externo -->
+            <div class="info-section usuario-section">
+                <div class="section-header">
+                    <h2 class="section-title">👤 Informações do Usuário Externo</h2>
+                </div>
+                <div class="info-card">
+                    <div class="info-item">
+                        <span class="info-label">Nome do Usuário Externo:</span>
+                        <span class="info-value" id="nomeUsuarioExterno">Otávio Silva</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Modelo do Carro:</span>
+                        <span class="info-value" id="modeloCarro">Porsche 911</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Cor do Carro:</span>
+                        <span class="info-value" id="corCarro">Preto</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn info" id="consultarUsuarioBtn">👁️ Consultar Usuário</button>
+                    <button class="action-btn info" id="consultarVeiculoBtn">🚗 Consultar Veículo</button>
+                    <button class="action-btn warning" id="bloquearUsuarioBtn">🚫 Bloquear Usuário</button>
+                </div>
+            </div>
+
+            <!-- Status de Solicitações -->
+            <div class="status-section">
+                <h2 class="section-title">📋 Status das Solicitações</h2>
+                <div class="status-grid">
+                    <!-- Solicitação do Condomínio -->
+                    <div class="status-card">
+                        <h3>Solicitação do Condomínio</h3>
+                        <div class="status-content">
+                            <div class="status-item">
+                                <span class="status-label">Status:</span>
+                                <span class="status-value status-done" id="statusCondominio">✓ Pedido Feito</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solicitação do Usuário Externo -->
+                    <div class="status-card">
+                        <h3>Solicitação do Usuário Externo</h3>
+                        <div class="status-content">
+                            <div class="status-item">
+                                <span class="status-label">Status:</span>
+                                <span class="status-value status-pending" id="statusUsuario">⏳ Ainda não aprovado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ações Finais -->
+            <div class="final-actions">
+                <button class="btn-action success" id="concluirBtn" disabled>
+                    ✓ Concluir Pedido
+                </button>
+                <button class="btn-action danger" id="negarBtn" disabled>
+                    ✗ Negar Pedido
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modais para consultar dados e confirmações -->
+
+    <!-- Modal: Consultar Síndico -->
+    <div id="modalSindico" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Dados Completos do Síndico</h2>
+                <button class="close-btn" onclick="closeModal('modalSindico')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-group">
+                    <label>Nome Completo</label>
+                    <p>José dos Santos</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Email</label>
+                    <p>jose.santos@email.com</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Telefone</label>
+                    <p>(11) 98765-4321</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>CPF</label>
+                    <p>123.456.789-00</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Condomínio</label>
+                    <p>Condomínio Sunshine Park</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Endereço</label>
+                    <p>Rua Principal, 100 - Apto 501 - São Paulo, SP</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Status</label>
+                    <span class="badge badge-active">Ativo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Consultar Usuário Externo -->
+    <div id="modalUsuario" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Dados Completos do Usuário Externo</h2>
+                <button class="close-btn" onclick="closeModal('modalUsuario')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-group">
+                    <label>Nome Completo</label>
+                    <p>Otávio Silva</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Email</label>
+                    <p>otavio.silva@email.com</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Telefone</label>
+                    <p>(11) 99999-8888</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>CPF</label>
+                    <p>987.654.321-00</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>CNH</label>
+                    <p>1234567890</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Data de Validade da CNH</label>
+                    <p>15/03/2030</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Endereço</label>
+                    <p>Avenida Paulista, 1000 - São Paulo, SP</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Status</label>
+                    <span class="badge badge-active">Ativo</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Consultar Veículo -->
+    <div id="modalVeiculo" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Dados Completos do Veículo</h2>
+                <button class="close-btn" onclick="closeModal('modalVeiculo')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-info-group">
+                    <label>Modelo</label>
+                    <p>Porsche 911</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Cor</label>
+                    <p>Preto</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Placa</label>
+                    <p>ABC-1234</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Ano</label>
+                    <p>2022</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>RENAVAM</label>
+                    <p>12345678901234</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Chassis</label>
+                    <p>9PA2E21D75S123456</p>
+                </div>
+                <div class="modal-info-group">
+                    <label>Seguro Veicular</label>
+                    <span class="badge badge-active">Ativo até 15/12/2025</span>
+                </div>
+                <div class="modal-info-group">
+                    <label>Status</label>
+                    <span class="badge badge-active">Verificado</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Confirmação de Ação -->
+    <div id="modalConfirmacao" class="modal">
+        <div class="modal-content modal-confirmation">
+            <div class="modal-header">
+                <h2 id="confirmTitle">Confirmar Ação</h2>
+                <button class="close-btn" onclick="closeModal('modalConfirmacao')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">Tem certeza que deseja realizar esta ação?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal cancel" onclick="closeModal('modalConfirmacao')">Cancelar</button>
+                <button class="btn-modal confirm" id="confirmBtn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./js/confirmacao-sindico.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Usuários Externos - Park-Share</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/sindico.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="nav-links">
+            <button class="nav-link">Dashboard</button>
+            <button class="nav-link">Pedidos</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="profile.html" class="dropdown-item">Perfis</a>
+                    <a href="#" class="dropdown-item">Sair</a>
+                </div>
+            </div>
+            <div class="user-icon">👨‍💼</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="sindico-page">
+        <div class="sindico-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Gerenciamento</h2>
+                </div>
+                <nav class="sidebar-nav">
+                    <button class="nav-item" onclick="window.location.href='sindico.html'">
+                        <span class="icon">🅿️</span>
+                        <span>Gerenciar Vagas</span>
+                    </button>
+                    <button class="nav-item" onclick="window.location.href='gerenciar-condominios.html'">
+                        <span class="icon">🏢</span>
+                        <span>Gerenciar Condomínios</span>
+                    </button>
+                    <button class="nav-item active highlighted">
+                        <span class="icon">👥</span>
+                        <span>Gerenciar Usuários Externos</span>
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="content">
+                <h1 class="content-title">Gerenciar Usuários Externos</h1>
+
+                <div class="search-container">
+                    <input type="search" id="searchInput" class="search-input"
+                        placeholder="Buscar usuário por nome ou email...">
+                </div>
+
+                <!-- Usuários List with container -->
+                <div class="details-container">
+                    <div class="usuarios-list" id="usuariosList">
+                        <!-- Preenchido dinamicamente por JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./js/gerenciar-usuarios-externos.js"></script>
+</body>
+
+</html>
