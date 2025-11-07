@@ -14,8 +14,8 @@
     <header>
         <div class="logo"><a href="index.html">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Dashboard</button>
-            <button class="nav-link">Pedidos</button>
+            <button class="nav-link">Como Funciona</button>
+            <button class="nav-link">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,13 +26,16 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="profile.html" class="dropdown-item">Perfis</a>
-                    <a href="#" class="dropdown-item">Sair</a>
+                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#faq" class="dropdown-item">FAQ</a>
                 </div>
             </div>
-            <div class="user-icon">👨‍💼</div>
+            <div class="user-icon">👤</div>
         </div>
     </header>
+
 
     <!-- Main Content -->
     <main class="sindico-page">
@@ -47,13 +50,17 @@
                         <span class="icon">🅿️</span>
                         <span>Gerenciar Vagas</span>
                     </button>
-                    <button class="nav-item" onclick="window.location.href='gerenciar-condominios.html'">
-                        <span class="icon">🏢</span>
-                        <span>Gerenciar Condomínios</span>
+                    <button class="nav-item" onclick="window.location.href='gerenciar-condominos.html'">
+                        <span class="icon">👥</span>
+                        <span>Gerenciar Condôminos</span>
                     </button>
                     <button class="nav-item active highlighted">
-                        <span class="icon">👥</span>
+                        <span class="icon">👤</span>
                         <span>Gerenciar Usuários Externos</span>
+                    </button>
+                    <button class="nav-item" onclick="window.location.href='gerenciar-edifcio.html'">
+                        <span class="icon">🏢</span>
+                        <span>Gerenciar Edificio</span>
                     </button>
                 </nav>
             </aside>

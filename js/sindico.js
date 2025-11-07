@@ -1,4 +1,3 @@
-// Mock data para pedidos
 const mockOrders = [
   {
     id: 1,

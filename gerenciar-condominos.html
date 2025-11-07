@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Condomínios - Park-Share</title>
+    <title>Gerenciar Condôminos - Park-Share</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/sindico.css">
 </head>
@@ -14,8 +14,8 @@
     <header>
         <div class="logo"><a href="index.html">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Dashboard</button>
-            <button class="nav-link">Pedidos</button>
+            <button class="nav-link">Como Funciona</button>
+            <button class="nav-link">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,13 +26,16 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="profile.html" class="dropdown-item">Perfis</a>
-                    <a href="#" class="dropdown-item">Sair</a>
+                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#faq" class="dropdown-item">FAQ</a>
                 </div>
             </div>
-            <div class="user-icon">👨‍💼</div>
+            <div class="user-icon">👤</div>
         </div>
     </header>
+
 
     <!-- Main Content -->
     <main class="sindico-page">
@@ -49,29 +52,33 @@
                         <span>Gerenciar Vagas</span>
                     </button>
                     <button class="nav-item active highlighted">
-                        <span class="icon">🏢</span>
-                        <span>Gerenciar Condomínios</span>
+                        <span class="icon">👥</span>
+                        <span>Gerenciar Condôminos</span>
                     </button>
                     <button class="nav-item" onclick="window.location.href='gerenciar-usuarios-externos.html'">
-                        <span class="icon">👥</span>
+                        <span class="icon">👤</span>
                         <span>Gerenciar Usuários Externos</span>
+                    </button>
+                    <button class="nav-item" onclick="window.location.href='gerenciar-edifcio.html'">
+                        <span class="icon">🏢</span>
+                        <span>Gerenciar Edificio</span>
                     </button>
                 </nav>
             </aside>
 
             <!-- Content Area -->
             <section class="content">
-                <h1 class="content-title">Gerenciar Condomínios</h1>
+                <h1 class="content-title">Gerenciar Condôminos</h1>
 
                 <div class="search-container">
                     <input type="search" id="searchInput" class="search-input"
-                        placeholder="Buscar condomínio por nome ou localização...">
+                        placeholder="Buscar condômino por nome ou CPF...">
                 </div>
 
-                <!-- Condomínios List with container -->
+                <!-- Condôminos List with container -->
                 <div class="details-container">
                     <button class="btn-primary btn-novo" onclick="openCadastroCondominioModal()">+ Cadastrar Novo
-                        Condomínio</button>
+                        Condômino</button>
                     <div class="condominios-list" id="condominiosList">
                         <!-- Preenchido dinamicamente por JavaScript -->
                     </div>
@@ -80,25 +87,37 @@
         </div>
     </main>
 
-    <!-- Modal para Cadastrar/Editar Condomínio -->
+    <!-- Modal para Cadastrar/Editar Condômino -->
     <div class="modal" id="cadastroCondominioModal">
         <div class="modal-content small">
             <div class="modal-header">
-                <h2 id="modalTitle">Cadastrar Novo Condomínio</h2>
+                <h2 id="modalTitle">Cadastrar Novo Condômino</h2>
                 <button class="modal-close" onclick="closeModal('cadastroCondominioModal')">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="cadastroCondominioForm">
                     <div class="form-group">
-                        <label for="nomeCondominio">Nome do Condomínio</label>
+                        <label for="nomeCondominio">Nome do Condômino</label>
                         <input type="text" id="nomeCondominio" required>
                     </div>
                     <div class="form-group">
-                        <label for="localCondominio">Localização</label>
-                        <input type="text" id="localCondominio" required>
+                        <label for="cpfCondominio">CPF</label>
+                        <input type="text" id="cpfCondominio" placeholder="000.000.000-00" required>
                     </div>
                     <div class="form-group">
-                        <label for="vagasDisponiveis">Número de Vagas</label>
+                        <label for="emailCondominio">Email</label>
+                        <input type="email" id="emailCondominio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefoneCondominio">Telefone</label>
+                        <input type="tel" id="telefoneCondominio" placeholder="(11) 99999-9999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="enderecoCondominio">Endereço</label>
+                        <input type="text" id="enderecoCondominio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vagasDisponiveis">Vagas Alugadas</label>
                         <input type="number" id="vagasDisponiveis" required>
                     </div>
                     <div class="form-actions">
@@ -118,8 +137,7 @@
         </div>
     </footer>
 
-    <script src="./js/gerenciar-condominios.js"></script>
-    <script src="./js/theme.js"></script>
+    <script src="./js/gerenciar-condominos.js"></script>
 </body>
 
 </html>

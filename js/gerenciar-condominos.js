@@ -2,30 +2,38 @@ const mockCondominios = [
   {
     id: 1,
     nome: "José dos Santos",
-    local: "Av. Paulista, 1000 - São Paulo",
-    vagas: 50,
-    vagasOcupadas: 35,
+    cpf: "123.456.789-10",
+    email: "jose@email.com",
+    telefone: "(11) 98765-4321",
+    endereco: "Av. Paulista, 1000 - São Paulo",
+    vagas: 3,
   },
   {
     id: 2,
     nome: "Maria Santos",
-    local: "Rua Oscar Freire, 500 - São Paulo",
-    vagas: 30,
-    vagasOcupadas: 22,
+    cpf: "234.567.890-21",
+    email: "maria@email.com",
+    telefone: "(11) 97654-3210",
+    endereco: "Rua Oscar Freire, 500 - São Paulo",
+    vagas: 2,
   },
   {
     id: 3,
-    nome: "São Miguel",
-    local: "Av. Radial Leste, 579 - São Miguel",
-    vagas: 80,
-    vagasOcupadas: 45,
+    nome: "Carlos Silva",
+    cpf: "345.678.901-32",
+    email: "carlos@email.com",
+    telefone: "(11) 96543-2109",
+    endereco: "Av. Radial Leste, 579 - São Miguel",
+    vagas: 4,
   },
   {
     id: 4,
-    nome: "Itaquera",
-    local: "Estrada da Congregação, 100 - Itaquera",
-    vagas: 60,
-    vagasOcupadas: 38,
+    nome: "Ana Paula Oliveira",
+    cpf: "456.789.012-43",
+    email: "ana@email.com",
+    telefone: "(11) 95432-1098",
+    endereco: "Estrada da Congregação, 100 - Itaquera",
+    vagas: 5,
   },
 ];
 
@@ -54,8 +62,7 @@ function setupEventListeners() {
     const searchTerm = e.target.value.toLowerCase();
     const filtered = mockCondominios.filter(
       (c) =>
-        c.nome.toLowerCase().includes(searchTerm) ||
-        c.local.toLowerCase().includes(searchTerm)
+        c.nome.toLowerCase().includes(searchTerm) || c.cpf.includes(searchTerm)
     );
     renderCondominios(filtered);
   });
@@ -65,7 +72,10 @@ function setupEventListeners() {
     ?.addEventListener("submit", (e) => {
       e.preventDefault();
       const nome = document.getElementById("nomeCondominio").value;
-      const local = document.getElementById("localCondominio").value;
+      const cpf = document.getElementById("cpfCondominio").value;
+      const email = document.getElementById("emailCondominio").value;
+      const telefone = document.getElementById("telefoneCondominio").value;
+      const endereco = document.getElementById("enderecoCondominio").value;
       const vagas = Number.parseInt(
         document.getElementById("vagasDisponiveis").value
       );
@@ -76,22 +86,27 @@ function setupEventListeners() {
           condominios[index] = {
             ...condominios[index],
             nome,
-            local,
+            cpf,
+            email,
+            telefone,
+            endereco,
             vagas,
           };
-          alert("Condomínio atualizado com sucesso!");
+          alert("Condômino atualizado com sucesso!");
           editingId = null;
         }
       } else {
         const newCond = {
           id: Math.max(...condominios.map((c) => c.id), 0) + 1,
           nome,
-          local,
+          cpf,
+          email,
+          telefone,
+          endereco,
           vagas,
-          vagasOcupadas: 0,
         };
         condominios.push(newCond);
-        alert("Condomínio cadastrado com sucesso!");
+        alert("Condômino cadastrado com sucesso!");
       }
 
       closeModal("cadastroCondominioModal");
@@ -105,7 +120,7 @@ function renderCondominios(list = condominios) {
 
   if (list.length === 0) {
     condominiosList.innerHTML =
-      '<p class="no-orders">Nenhum condomínio encontrado</p>';
+      '<p class="no-orders">Nenhum condômino encontrado</p>';
     return;
   }
 
@@ -115,8 +130,10 @@ function renderCondominios(list = condominios) {
         <div class="condominio-item">
             <div class="condominio-info">
                 <div class="condominio-nome">${cond.nome}</div>
-                <div class="condominio-local">📍 ${cond.local}</div>
-                <div class="condominio-vagas">🅿️ Vagas: ${cond.vagasOcupadas}/${cond.vagas} ocupadas</div>
+                <div class="condominio-local">📱 ${cond.telefone} | 📧 ${cond.email}</div>
+                <div class="condominio-local">🆔 CPF: ${cond.cpf}</div>
+                <div class="condominio-local">📍 ${cond.endereco}</div>
+                <div class="condominio-vagas">🅿️ Vagas Alugadas: ${cond.vagas}</div>
             </div>
             <div class="condominio-actions">
                 <button class="btn-editar" onclick="editarCondominio(${cond.id})">Editar</button>
@@ -132,21 +149,24 @@ function editarCondominio(id) {
   editingId = id;
   const cond = condominios.find((c) => c.id === id);
 
-  document.getElementById("modalTitle").textContent = "Editar Condomínio";
+  document.getElementById("modalTitle").textContent = "Editar Condômino";
   document.getElementById("nomeCondominio").value = cond.nome;
-  document.getElementById("localCondominio").value = cond.local;
+  document.getElementById("cpfCondominio").value = cond.cpf;
+  document.getElementById("emailCondominio").value = cond.email;
+  document.getElementById("telefoneCondominio").value = cond.telefone;
+  document.getElementById("enderecoCondominio").value = cond.endereco;
   document.getElementById("vagasDisponiveis").value = cond.vagas;
 
   openModal("cadastroCondominioModal");
 }
 
 function removerCondominio(id) {
-  if (confirm("Tem certeza que deseja deletar este condomínio?")) {
+  if (confirm("Tem certeza que deseja deletar este condômino?")) {
     const index = condominios.findIndex((c) => c.id === id);
     if (index > -1) {
       condominios.splice(index, 1);
       renderCondominios();
-      alert("Condomínio deletado com sucesso!");
+      alert("Condômino deletado com sucesso!");
     }
   }
 }
@@ -154,7 +174,7 @@ function removerCondominio(id) {
 function openCadastroCondominioModal() {
   editingId = null;
   document.getElementById("modalTitle").textContent =
-    "Cadastrar Novo Condomínio";
+    "Cadastrar Novo Condômino";
   document.getElementById("cadastroCondominioForm").reset();
   openModal("cadastroCondominioModal");
 }
