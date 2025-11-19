@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParkShare - Compartilhe Vagas de Estacionamento</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Desenvolvedores - Park-Share</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/desenvolvedores.css">
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <!-- Alterado logo e título para Park-Share -->
         <div class="logo"><a href="index.html">ParkShare</a></div>
         <div class="nav-links">
             <button class="nav-link">Como Funciona</button>
@@ -26,8 +25,8 @@
             <div class="menu-icon" id="menuToggle">
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="#inicio" class="dropdown-item">Início</a>
-                    <a href="#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
                     <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
                     <a href="#contato" class="dropdown-item">Contato</a>
                     <a href="#faq" class="dropdown-item">FAQ</a>
@@ -38,23 +37,59 @@
         </div>
     </header>
 
-    <!-- Search Bar -->
-    <div class="search-container">
-        <div class="search-bar">
-            <span class="search-icon">🔍</span>
-            <!-- Alterado placeholder para busca de vagas -->
-            <input type="text" class="search-input" id="searchInput" placeholder="Buscar vagas por endereço...">
-            <span class="map-icon" id="mapIcon" title="Ver no mapa">🗺️</span>
-        </div>
-        <div class="search-suggestions" id="searchSuggestions"></div>
-    </div>
-
     <!-- Main Content -->
-    <div class="container" id="mainContainer">
-        <!-- Os carrosséis serão renderizados aqui dinamicamente via JavaScript -->
+    <div class="dev-container">
+        <h1 class="dev-title">Tela de Desenvolvedores do ParkShare</h1>
+
+        <div class="dev-cards-container">
+            <!-- Card 1 - Anthony -->
+            <div class="dev-card">
+                <div class="dev-image-wrapper">
+                    <img src="public/diverse-user-avatars.png" alt="Anthony" class="dev-image">
+                </div>
+                <h3 class="dev-name">Anthony </h3>
+                <p class="dev-role">Desenvolvedor Full Stack</p>
+            </div>
+
+            <!-- Card 2 - Guilherme -->
+            <div class="dev-card">
+                <div class="dev-image-wrapper">
+                    <img src="public/diverse-user-avatars.png" alt="Guilherme" class="dev-image">
+                </div>
+                <h3 class="dev-name">Guilherme</h3>
+                <p class="dev-role">Desenvolvedor Full Stack</p>
+            </div>
+
+            <!-- Card 3 - Henrique -->
+            <div class="dev-card">
+                <div class="dev-image-wrapper">
+                    <img src="public/diverse-user-avatars.png" alt="Henrique" class="dev-image">
+                </div>
+                <h3 class="dev-name">Henrique</h3>
+                <p class="dev-role">Desenvolvedor Full Stack</p>
+            </div>
+
+            <!-- Card 4 - José -->
+            <div class="dev-card">
+                <div class="dev-image-wrapper">
+                    <img src="public/diverse-user-avatars.png" alt="José" class="dev-image">
+                </div>
+                <h3 class="dev-name">José</h3>
+                <p class="dev-role">Desenvolvedor Full Stack</p>
+            </div>
+
+            <!-- Card 5 - Marcos -->
+            <div class="dev-card">
+                <div class="dev-image-wrapper">
+                    <img src="public/diverse-user-avatars.png" alt="Marcos" class="dev-image">
+                </div>
+                <h3 class="dev-name">Moisés</h3>
+                <p class="dev-role">Desenvolvedor Full Stack</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Footer detalhado com múltiplas colunas -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
@@ -116,8 +151,7 @@
         </div>
     </footer>
 
-    <!-- Linkando arquivo JavaScript externo -->
-    <script src="./js/main.js"></script>
+    <script src="js/desenvolvedores.js"></script>
 </body>
 
 </html>

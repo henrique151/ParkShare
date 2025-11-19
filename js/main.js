@@ -305,7 +305,7 @@ function goToDetails(propertyId) {
 }
 
 function goToMap() {
-  window.location.href = "mapa.html";
+  alert("Mapa");
 }
 
 // ========================================

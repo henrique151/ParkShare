@@ -1,0 +1,224 @@
+/* ========================================
+   PÁGINA DE DESENVOLVEDORES - ESTILO
+   ======================================== */
+
+/* Container principal */
+.dev-container {
+  max-width: 1700px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--shadow-lg);
+}
+
+/* Título principal */
+.dev-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--accent-primary);
+}
+
+/* Container dos cards */
+.dev-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 20px;
+}
+
+/* Card individual do desenvolvedor */
+.dev-card {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.dev-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px var(--shadow-md);
+  border-color: var(--accent-primary);
+  background-color: var(--card-bg);
+}
+
+/* Wrapper da imagem (círculo) */
+.dev-image-wrapper {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent-primary);
+  box-shadow: 0 4px 16px var(--shadow-md);
+  transition: all 0.4s ease;
+}
+
+.dev-card:hover .dev-image-wrapper {
+  border-width: 6px;
+  transform: scale(1.05);
+}
+
+/* Imagem do desenvolvedor */
+.dev-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nome do desenvolvedor */
+.dev-name {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* Cargo/Função do desenvolvedor */
+.dev-role {
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 8px 16px;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Tablet grande - 4 cards por linha */
+@media (max-width: 1200px) {
+  .dev-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+
+  .dev-title {
+    font-size: 28px;
+  }
+}
+
+/* Tablet - 3 cards por linha */
+@media (max-width: 992px) {
+  .dev-container {
+    margin: 40px auto;
+    padding: 30px 15px;
+  }
+
+  .dev-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .dev-title {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .dev-image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .dev-name {
+    font-size: 16px;
+  }
+
+  .dev-role {
+    font-size: 13px;
+  }
+}
+
+/* Mobile grande - 2 cards por linha */
+@media (max-width: 768px) {
+  .dev-container {
+    margin: 30px auto;
+    padding: 25px 15px;
+    border-radius: 16px;
+  }
+
+  .dev-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 10px;
+  }
+
+  .dev-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .dev-card {
+    padding: 25px 15px;
+  }
+
+  .dev-image-wrapper {
+    width: 140px;
+    height: 140px;
+  }
+
+  .dev-name {
+    font-size: 15px;
+  }
+
+  .dev-role {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Mobile pequeno - 1 card por linha */
+@media (max-width: 480px) {
+  .dev-container {
+    margin: 20px auto;
+    padding: 20px 10px;
+    border-radius: 12px;
+  }
+
+  .dev-cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  .dev-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+
+  .dev-card {
+    padding: 30px 20px;
+  }
+
+  .dev-image-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+
+  .dev-name {
+    font-size: 17px;
+  }
+
+  .dev-role {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}

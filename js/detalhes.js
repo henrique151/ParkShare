@@ -129,7 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mapBtn) {
     mapBtn.addEventListener("click", () => {
-      window.location.href = "mapa.html";
+      const cep = document.getElementById("propertyCep").textContent;
+      if (cep) {
+        const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+          cep
+        )}`;
+        window.open(googleMapsUrl, "_blank");
+      } else {
+        alert("CEP não encontrado.");
+      }
     });
   }
 });

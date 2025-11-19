@@ -260,6 +260,10 @@ header {
   font-size: 18px;
 }
 
+.user-icon a {
+  text-decoration: none;
+}
+
 .menu-icon:hover,
 .user-icon:hover {
   border-color: var(--accent-primary);
