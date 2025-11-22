@@ -19,11 +19,11 @@ Aqui está um resumo do que já foi implementado e do que ainda está planejado 
 
 ### Funcionalidades Planejadas (Não implementadas)
 
-- **Tela de Login:** Não tem.
-- **Tela de Registro de Usuário (Cadastro):** Não tem.
-- **Tela de Esqueci minha Senha / Recuperar Senha:** Não tem.
+- **Tela de Login:** Feito!
+- **Tela de Registro de Usuário (Cadastro):** Feito!
+- **Tela de Esqueci minha Senha / Recuperar Senha:** Feito!
 - **Visualização de Perfil: Tela para os usuários verem seus próprios perfis:** Não tem. 
-- **Tela de Alterar Senha (após login):** Não tem.
+- **Tela de Alterar Senha (após login):** Feito!
 - **Tela de Registrar Condomínio:** Não tem.
 - **Tela de Gerenciar Condomínios:** Não tem.
 - **Tela de Registrar Síndico:** Não tem.
