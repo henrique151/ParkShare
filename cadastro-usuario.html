@@ -1,12 +1,12 @@
-<!DOCTYPE html> <!-- Anthony -->
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Conta - Park-Share</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/cadastro-usuario.css">
+    <title>Cadastrar Conta - ParkShare</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cadastro-edificio.css">
 </head>
 
 <body>
@@ -29,38 +29,29 @@
                     <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
                     <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
                     <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
                 </div>
             </div>
             <div class="user-icon">👤</div>
         </div>
     </header>
 
-
     <!-- Main Content -->
     <main class="cadastro-page">
         <div class="cadastro-container">
-
-
-            <!-- Content Area -->
             <section class="content">
-                <!-- Header com botão voltar -->
                 <div class="editar-header">
                     <h1 class="content-title">Criar Cadastro</h1>
                 </div>
 
-                <!-- Container com informações do condomínio -->
                 <div class="details-container">
                     <div class="cadastro-detalhes">
-                        <!-- Seção de informações gerais -->
                         <div class="detalhes-secao">
                             <h2 class="secao-titulo">
                                 <span class="secao-icon">📄</span>
                                 Informações do Cadastro
                             </h2>
 
-                            <form id="formcadastroEditar" class="form-cadastro">
-
+                            <form id="formCadastro" class="form-cadastro">
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="nomeUsuario">Nome</label>
@@ -94,28 +85,20 @@
                                     <div class="form-group">
                                         <div class="label-with-info">
                                             <label for="tipoUsuario">Tipo de Usuário</label>
-                                            <button type="button" class="btn-info" onclick="openAllModals()">i </button>
-
+                                            <button type="button" class="btn-info"
+                                                onclick="openModal('modalTiposUsuario')">i</button>
                                         </div>
-
-
                                         <select id="tipoUsuario" required>
                                             <option value="">Selecione...</option>
                                             <option value="usuarioexterno">Usuário Externo</option>
                                             <option value="sindico">Síndico</option>
-                                            <!--<option value="condomino">Condômino</option> -->
                                         </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label for="nascimentoUsuario">Data de Nascimento</label>
-                                        <input type="date" onclick="CriarCalendario('nascimentoUsuario')"
-                                        id="nascimentoUsuario" readonly required>
-
-                                        <div class="calendar-popup" id="calendarPopup"></div>
-
-
+                                        <input type="date" id="nascimentoUsuario" required>
                                     </div>
-
                                 </div>
 
                                 <div class="form-row">
@@ -124,22 +107,15 @@
                                         <input type="tel" id="telefoneUsuario" placeholder="(11) 90000-0000" required>
                                     </div>
                                 </div>
-
                             </form>
-
                         </div>
 
                         <!-- Botões de ação -->
                         <div class="acoes-cadastro">
-                            <button class="btn-salvar" onclick="salvarCadastro()">
-                                💾 Salvar Cadastro
-                            </button>
-                            <button class="btn-cancelar" onclick="window.location.href='cadastro-usuario.html'">
-                                ↩️ Cancelar
-                            </button>
-                            <button class="btn-deletar" onclick="window.location.href='cadastro-usuario.html'">
-                                🔄 Reiniciar Cadastro
-                            </button>
+                            <button class="btn-salvar" onclick="salvarCadastro()">💾 Salvar Cadastro</button>
+                            <button class="btn-cancelar" onclick="window.location.href='index.html'">↩️
+                                Cancelar</button>
+                            <button class="btn-deletar" onclick="reiniciarCadastro()">🔄 Reiniciar Cadastro</button>
                         </div>
                     </div>
                 </div>
@@ -147,42 +123,32 @@
         </div>
     </main>
 
-
-    <div class="modal" id="modalGrupo">
+    <!-- Modal de Tipos de Usuário -->
+    <div class="modal" id="modalTiposUsuario">
         <div class="modal-content large">
-
             <div class="modal-header">
                 <h2>Informações dos Tipos de Usuário</h2>
-                <button class="modal-close" onclick="closeModal('modalGrupo')">&times;</button>
+                <button class="modal-close" onclick="closeModal('modalTiposUsuario')">&times;</button>
             </div>
 
             <div class="modal-body">
                 <div class="modal-grid">
                     <div class="modal-card">
                         <h3>Síndico</h3>
-                        <p>Um síndico é a Usuario responsável por administrar um condomínio, seja ele residencial,
+                        <p>Um síndico é a pessoa responsável por administrar um condomínio, seja ele residencial,
                             comercial ou misto. Ele age como o representante legal do condomínio e tem o dever de cuidar
                             da parte administrativa, financeira e operacional.</p>
                     </div>
 
                     <div class="modal-card">
                         <h3>Usuário Externo</h3>
-                        <p>Pode ser uma Usuario que utiliza os serviços ou visita o local, mas não é morador nem
+                        <p>Pode ser uma pessoa que utiliza os serviços ou visita o local, mas não é morador nem
                             funcionário.</p>
-                    </div>
-
-                    <div class="modal-card">
-                        <h3>Condômino</h3>
-                        <p>Responsável pelo gerenciamento da sua vaga e pela comunicação entre o usuário externo e o
-                            condomínio.</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
-
 
     <!-- Footer -->
     <footer>
@@ -191,12 +157,7 @@
         </div>
     </footer>
 
-    <!-- Calendário popup -->
-
-
-    <!-- JS carregado somente após o DOM -->
-    <script src="./js/cadastro-usuario.js" defer></script>
-    <script src="./js/cadastro-calendario.js" defer></script>
+    <script src="js/cadastro-usuario.js"></script>
 </body>
 
 </html>

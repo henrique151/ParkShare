@@ -1,0 +1,129 @@
+<!DOCTYPE html> <!-- Moisés -->
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Conta - Park-Share</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/cadastro-veiculo.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="nav-links">
+            <button class="nav-link">Como Funciona</button>
+            <button class="nav-link">Sobre</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#faq" class="dropdown-item">FAQ</a>
+                </div>
+            </div>
+            <div class="user-icon">👤</div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="cadastro-page">
+        <div class="cadastro-container">
+
+
+            <!-- Content Area -->
+            <section class="content">
+                <!-- Header com botão voltar -->
+                <div class="editar-header">
+                    <h1 class="content-title">Criar Cadastro</h1>
+                </div>
+
+                <!-- Container com informações do condomínio -->
+                <div class="details-container">
+                    <div class="cadastro-detalhes">
+                        <!-- Seção de informações gerais -->
+                        <div class="detalhes-secao">
+                            <h2 class="secao-titulo">
+                                <span class="secao-icon">📄</span>
+                                Informações do Cadastro - Veículo
+                            </h2>
+
+                            <form id="formcadastroEditar" class="form-cadastro">
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="modeloVeiculo">Modelo</label>
+                                        <input type="text" id="modeloVeiculo" placeholder="Ex: Bugatti" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="marcaVeiculo">Marca</label>
+                                        <input type="text" id="marcaVeiculo" placeholder="Ex: Empresa que fabricou"
+                                            required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="corVeiculo">Cor</label>
+                                        <input type="text" id="corVeiculo" placeholder="Ex: Vermelho" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="placaVeiculo">Placa</label>
+                                        <input type="text" id="placaVeiculo" placeholder="Ex: BFA 0001" required>
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+                        </div>
+
+                        <!-- Botões de ação -->
+                        <div class="acoes-cadastro">
+                            <button class="btn-salvar" onclick="salvarCadastro()">
+                                💾 Salvar Cadastro
+                            </button>
+                            <button class="btn-cancelar" onclick="window.location.href='index.html'">
+                                ↩️ Cancelar
+                            </button>
+                            <button class="btn-deletar" onclick="window.location.href='cadastro-veiculo.html'">
+                                🔄 Reiniciar Cadastro
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Calendário popup -->
+
+
+    <!-- JS carregado somente após o DOM -->
+    <script src="./js/cadastro-veiculo.js" defer></script>
+
+</body>
+
+</html>
