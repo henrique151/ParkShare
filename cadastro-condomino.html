@@ -1,0 +1,131 @@
+<!DOCTYPE html> <!-- Anthony -->
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Condômino - Park-Share</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/cadastro-condomino.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="nav-links">
+            <button class="nav-link">Como Funciona</button>
+            <button class="nav-link">Sobre</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#faq" class="dropdown-item">FAQ</a>
+                </div>
+            </div>
+            <div class="user-icon">👤</div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="cadastro-page">
+        <div class="cadastro-container">
+
+
+            <!-- Content Area -->
+            <section class="content">
+                <!-- Header com botão voltar -->
+                <div class="editar-header">
+                    <h1 class="content-title">Criar Cadastro do Condômino</h1>
+                </div>
+
+                <!-- Container com informações do condomínio -->
+                <div class="details-container">
+                    <div class="cadastro-detalhes">
+                        <!-- Seção de informações gerais -->
+                        <div class="detalhes-secao">
+                            <h2 class="secao-titulo">
+                                <span class="secao-icon">📄</span>
+                                Informações do Cadastro
+                            </h2>
+
+                            <form id="formcadastroEditar" class="form-cadastro">
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nomeCondomino">Nome do Condômino</label>
+                                        <input type="text" id="nomeCondomino" placeholder="Ex: Ana Maria Paula"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cpfCondomino">CPF</label>
+                                        <input type="text" id="cpfCondomino" placeholder="000.000.000-00" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="telefoneCondomino">Telefone</label>
+                                        <input type="tel" id="telefoneCondomino" placeholder="(11) 90000-0000" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="idNumVaga">Número da Vaga</label>
+                                        <input type="text" id="idNumVaga" placeholder="Ex: 25" required> 
+                                        <a href="registrar-vaga.html" id="resVaga">Não possui a Vaga? Registrar uma Vaga.</a>                   
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </form>
+
+                        </div>
+
+                        <!-- Botões de ação -->
+                        <div class="acoes-cadastro">
+                            <button class="btn-salvar" onclick="salvarCadastro()">
+                                💾 Salvar Registro
+                            </button>
+                            <button class="btn-cancelar" onclick="window.location.href='index.html'">
+                                ↩️ Cancelar
+                            </button>
+                            <button class="btn-deletar" onclick="window.location.href='cadastro-condomino.html'">
+                                🔄 Reiniciar Registro
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Calendário popup -->
+
+
+    <!-- JS carregado somente após o DOM -->
+    <script src="./js/cadastro-condomino.js" defer></script>
+
+</body>
+
+</html>
