@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Moisés -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Conta - Park-Share</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/cadastro-edificio.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="nav-links">
+            <button class="nav-link">Como Funciona</button>
+            <button class="nav-link">Sobre</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
+                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
+                    <a href="#contato" class="dropdown-item">Contato</a>
+                    <a href="#faq" class="dropdown-item">FAQ</a>
+                </div>
+            </div>
+            <div class="user-icon">👤</div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="cadastro-page">
+        <div class="cadastro-container">
+
+
+            <!-- Content Area -->
+            <section class="content">
+                <div class="editar-header">
+                    <h1 class="content-title">Criar Cadastro</h1>
+                </div>
+
+                <!-- Container com informações do edificio -->
+                <div class="details-container">
+                    <div class="cadastro-detalhes">
+                        <!-- Seção de informações gerais -->
+                        <div class="detalhes-secao">
+                            <h2 class="secao-titulo">
+                                <span class="secao-icon">📄</span>
+                                Informações do Cadastro - Edifício
+                            </h2>
+
+                            <form id="formcadastroEditar" class="form-cadastro">
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nomeEdificio">Nome de edificil</label>
+                                        <input type="text" id="nomeEdificio" placeholder="Ex: Prédio" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cepEdificio">Cep</label>
+                                        <input type="text" id="cepEdificio" placeholder="Ex: 0000-000" required>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="estadoEdificio">Estado</label>
+                                            <select id="estadoEdificio" required>
+                                                <option value="">Selecione...</option>
+                                                <option value="SP">SP</option>
+                                                <option value="RJ">RJ</option>
+                                                <option value="MG">MG</option>
+                                                <option value="BA">BA</option>
+                                                <option value="PR">PR</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telefoneEdificio">Telefone</label>
+                                            <input type="tel" id="telefoneEdificio" placeholder="(11) 3000-0000"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cnpjEdificio">CNPJ</label>
+                                        <input type="text" id="cnpjEdificio" placeholder="00.000.000/0000-00" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="enderecoEdificio">Endereço</label>
+                                        <input type="text" id="enderecoEdificio" placeholder="Ex: Avenida do vasco"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cidadeEdificio">Cidade</label>
+                                        <input type="text" id="cidadeEdificio" placeholder="Ex: São Paulo" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="detalhes-secao">
+                        <h2 class="secao-titulo">
+                            <span class="secao-icon">🅿️</span>
+                            Informações de Vagas
+                        </h2>
+
+                        <form class="form-condominio">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="totalVagas">Total de Vagas</label>
+                                    <input type="number" id="totalVagas" placeholder="Ex: 100" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vagasDisponiveis">Vagas Disponíveis</label>
+                                    <input type="number" id="vagasDisponiveis" placeholder="Ex: 45" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vagasOcupadas">Vagas Ocupadas</label>
+                                    <input type="number" id="vagasOcupadas" placeholder="Ex: 55" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="precoVaga">Preço por Vaga (Mensal)</label>
+                                    <input type="number" id="precoVaga" placeholder="R$ 500,00" step="0.01" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                 <!-- Seção de administrador -->
+                        <div class="detalhes-secao">
+                            <h2 class="secao-titulo">
+                                <span class="secao-icon">👤</span>
+                                Síndico
+                            </h2>
+
+                            <form class="form-condominio">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nomeSindico">Nome do Síndico</label>
+                                        <input type="text" id="nomeSindico" placeholder="Ex: João Silva" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emailSindico">Email do Síndico</label>
+                                        <input type="email" id="emailSindico" placeholder="sindico@email.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="telefoneSindico">Telefone do Síndico</label>
+                                        <input type="tel" id="telefoneSindico" placeholder="(11) 99999-9999" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cpfSindico">CPF do Síndico</label>
+                                        <input type="text" id="cpfSindico" placeholder="000.000.000-00" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                </div>
+                <!-- Seção de vagas -->
+               
+                <!-- Botões de ação -->
+                <div class="acoes-cadastro">
+                    <button class="btn-salvar" onclick="salvarCadastro()">
+                        💾 Solicitar para cadastrar o edificio
+                    </button>
+                    <button class="btn-cancelar" onclick="window.location.href='index.html'">
+                        ↩️ Cancelar
+                    </button>
+                    <button class="btn-deletar" onclick="window.location.href='cadastro-Edificio.html'">
+                        🔄 Reiniciar Cadastro
+                    </button>
+                </div>
+        </div>
+        </div>
+        </section>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Calendário popup -->
+
+
+    <!-- JS carregado somente após o DOM -->
+    <script src="./js/cadastro-edificio.js" defer></script>
+
+</body>
+
+</html>
