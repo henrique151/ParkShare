@@ -44,7 +44,7 @@ function salvarCadastro() {
   localStorage.setItem("cadastrocondominos", JSON.stringify(mockCadastroCondominos));
 
   alert("✅ Cadastro atualizado com sucesso!");
-  window.location.href = "index.html";
+  window.location.href = "gerenciar-vaga.html";
 }
 
 

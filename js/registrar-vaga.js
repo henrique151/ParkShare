@@ -50,7 +50,7 @@ function salvarRegistro() {
   localStorage.setItem("registrovagas", JSON.stringify(mockVagas));
 
   alert("✅ Registro da Vaga atualizado com sucesso!");
-  window.location.href = "cadastro-condomino.html";
+  window.location.href = "gerenciar-vaga.html";
 }
 
 

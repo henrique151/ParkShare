@@ -85,6 +85,16 @@
                                         <label for="placaVeiculo">Placa</label>
                                         <input type="text" id="placaVeiculo" placeholder="Ex: BFA 0001" required>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="anoFabricacao">Ano de Fabricação</label>
+                                        <input type="date" onclick="CriarCalendario('anoFabricacao')"
+                                            id="anoFabricacao" readonly required>
+
+                                        <div class="calendar-popup" id="calendarPopup"></div>
+
+
+                                    </div>
                                 </div>
 
 
@@ -123,6 +133,7 @@
 
     <!-- JS carregado somente após o DOM -->
     <script src="./js/cadastro-veiculo.js" defer></script>
+    <script src="./js/cadastro-calendario.js" defer></script>
 
 </body>
 
