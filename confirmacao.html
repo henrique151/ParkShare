@@ -12,10 +12,10 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,16 +26,16 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon"><a href="gerenciar-perfil-do-usuario-externo.html">👤</a></div>
-        </div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
+
 
     <!-- Main Content -->
     <main class="confirmation-page">
@@ -93,7 +93,11 @@
 
         </div>
     </main>
-
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script src="./js/confirmacao.js"></script>
 </body>

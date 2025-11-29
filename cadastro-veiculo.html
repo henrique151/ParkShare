@@ -12,10 +12,10 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,15 +26,16 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon">👤</div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
+
 
 
     <!-- Main Content -->
@@ -46,7 +47,7 @@
             <section class="content">
                 <!-- Header com botão voltar -->
                 <div class="editar-header">
-                    <h1 class="content-title">Criar Cadastro</h1>
+                    <h1 class="content-title">Cadastro do Veículo</h1>
                 </div>
 
                 <!-- Container com informações do condomínio -->
@@ -87,31 +88,28 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="tipoVeiculo">Tipo de Veículo</label>
+                                        <input type="text" id="tipoVeiculo" placeholder="Ex: (carro, moto, SUV etc.)"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="anoFabricacao">Ano de Fabricação</label>
-                                        <input type="date" onclick="CriarCalendario('anoFabricacao')"
-                                            id="anoFabricacao" readonly required>
-
+                                        <input type="date" onclick="CriarCalendario('anoFabricacao')" id="anoFabricacao"
+                                            readonly required>
                                         <div class="calendar-popup" id="calendarPopup"></div>
-
-
                                     </div>
                                 </div>
-
-
                             </form>
-
                         </div>
 
                         <!-- Botões de ação -->
                         <div class="acoes-cadastro">
                             <button class="btn-salvar" onclick="salvarCadastro()">
-                                💾 Salvar Cadastro
+                                💾 Salvar Cadastro do Veículo
                             </button>
-                            <button class="btn-cancelar" onclick="window.location.href='index.html'">
-                                ↩️ Cancelar
-                            </button>
-                            <button class="btn-deletar" onclick="window.location.href='cadastro-veiculo.html'">
-                                🔄 Reiniciar Cadastro
+                            <button class="btn-cancelar" onclick="window.location.href='cadastro-veiculo.html'">
+                                ↩️ Limpar Campos
                             </button>
                         </div>
                     </div>

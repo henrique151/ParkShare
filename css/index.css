@@ -225,11 +225,12 @@
   transition: all 0.3s ease;
   cursor: pointer;
   border: 2px solid var(--border-color);
+  margin-bottom: 8px;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px var(--shadow-lg);
+  box-shadow: 0 6px 12px var(--shadow-lg);
 }
 
 .card-image {

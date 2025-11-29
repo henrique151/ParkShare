@@ -12,10 +12,10 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,15 +26,16 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon">👤</div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
+
 
 
     <!-- Main Content -->
@@ -46,7 +47,7 @@
             <section class="content">
                 <!-- Header com botão voltar -->
                 <div class="editar-header">
-                    <h1 class="content-title">Criar Cadastro do Condômino</h1>
+                    <h1 class="content-title">Cadastro do Condômino</h1>
                 </div>
 
                 <!-- Container com informações do condomínio -->
@@ -74,23 +75,27 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="rgCondomino">RG</label>
+                                        <input type="text" id="rgCondomino" placeholder="00.000.000-0" required>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="telefoneCondomino">Telefone</label>
-                                        <input type="tel" id="telefoneCondomino" placeholder="(11) 90000-0000" required>
+                                        <input type="tel" id="telefoneCondomino" placeholder="(00) 00000-0000" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="emailCondomino">Email</label>
+                                        <input type="email" id="emailCondomino" placeholder="exemplo@gmail.com"
+                                            required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="idNumVaga">Número da Vaga</label>
-                                        <input type="text" id="idNumVaga" placeholder="Ex: 25" required> 
-                                        <a href="registrar-vaga.html" id="resVaga">Não possui a Vaga? Registrar uma Vaga.</a>                   
+                                        <input type="text" id="idNumVaga" placeholder="Ex: Vaga número 25" required>
                                     </div>
                                 </div>
-
-
-
-
-
                             </form>
-
                         </div>
 
                         <!-- Botões de ação -->
@@ -98,11 +103,8 @@
                             <button class="btn-salvar" onclick="salvarCadastro()">
                                 💾 Salvar Registro
                             </button>
-                            <button class="btn-cancelar" onclick="window.location.href='index.html'">
-                                ↩️ Cancelar
-                            </button>
-                            <button class="btn-deletar" onclick="window.location.href='cadastro-condomino.html'">
-                                🔄 Reiniciar Registro
+                            <button class="btn-cancelar" onclick="window.location.href='cadastro-condomino.html'">
+                                🔄 Limpar Campos
                             </button>
                         </div>
                     </div>

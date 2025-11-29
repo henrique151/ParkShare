@@ -7,6 +7,7 @@ const mockVeiculos = [
     cor: "Preto",
     placa: "ABC-1234",
     ano: "2022",
+    tipo: "carro",
   },
 ];
 
@@ -22,6 +23,7 @@ function validarFormulario() {
     "corVeiculo",
     "placaVeiculo",
     "anoFabricacao",
+    "tipoVeiculo",
   ];
 
   return campos.every((campo) => {
@@ -41,6 +43,7 @@ function salvarCadastro() {
   cadastroAtual.cor = document.getElementById("corVeiculo").value;
   cadastroAtual.placa = document.getElementById("placaVeiculo").value;
   cadastroAtual.ano = document.getElementById("anoFabricacao").value;
+  cadastroAtual.tipoVeiculo = document.getElementById("tipoVeiculo").value;
 
   // Salvar no localStorage para simular persistência
   localStorage.setItem("cadastrousuarios", JSON.stringify(mockVeiculos));

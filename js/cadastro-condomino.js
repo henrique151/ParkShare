@@ -1,14 +1,14 @@
-
 const mockCadastroCondominos = [
   {
     id: 1,
     nome: "Adriano Moreira Cruz",
     telefone: "Masculino",
     cpf: "1245678909",
-    vaga: 25
-  }
+    rg: "553123252",
+    email: "Adriano@gmail.com",
+    vaga: 25,
+  },
 ];
-
 
 let cadastroAtual = null;
 function carregarCadastros() {
@@ -20,7 +20,8 @@ function validarFormulario() {
     "nomeCondomino",
     "telefoneCondomino",
     "cpfCondomino",
-    "idNumVaga"
+    "idNumVaga",
+    "rgCondomino",
   ];
 
   return campos.every((campo) => {
@@ -39,23 +40,26 @@ function salvarCadastro() {
   cadastroAtual.telefone = document.getElementById("telefoneCondomino").value;
   cadastroAtual.cpf = document.getElementById("cpfCondomino").value;
   cadastroAtual.vaga = document.getElementById("idNumVaga").value;
+  cadastroAtual.rg = document.getElementById("rgCondomino").value;
+  cadastroAtual.email = document.getElementById("emailCondomino").value;
 
   // Salvar no localStorage para simular persistência
-  localStorage.setItem("cadastrocondominos", JSON.stringify(mockCadastroCondominos));
+  localStorage.setItem(
+    "cadastrocondominos",
+    JSON.stringify(mockCadastroCondominos)
+  );
 
   alert("✅ Cadastro atualizado com sucesso!");
-  window.location.href = "gerenciar-vaga.html";
+  window.location.href = "index.html";
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   carregarCadastros();
-  setupEventListeners() 
-
+  setupEventListeners();
 });
 
-function setupEventListeners() { 
+function setupEventListeners() {
   const menuToggle = document.getElementById("menuToggle");
   const dropdownMenu = document.getElementById("dropdownMenu");
   menuToggle?.addEventListener("click", (e) => {
@@ -85,14 +89,13 @@ function toggleTheme() {
 }
 
 function openAllModals() {
-    openModal("modalGrupo");
+  openModal("modalGrupo");
 }
 
 function openModal(id) {
-    document.getElementById(id).classList.add("active");
+  document.getElementById(id).classList.add("active");
 }
 
 function closeModal(id) {
-    document.getElementById(id).classList.remove("active");
+  document.getElementById(id).classList.remove("active");
 }
-

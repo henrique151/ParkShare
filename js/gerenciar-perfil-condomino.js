@@ -191,7 +191,6 @@ function abrirModalExcluirVaga() {
   }
 
   const vagas = JSON.parse(vagaSalva);
-  const vagaData = vagas[0];
 
   const modal = document.getElementById("modal");
   const modalTitle = document.getElementById("modalTitle");
@@ -228,12 +227,28 @@ function abrirModalExcluirVaga() {
       return;
     }
 
-    localStorage.removeItem("registrovagas");
+    const submitBtn = e.target.querySelector('button[type="submit"]');
 
-    alert("✅ Vaga excluída com sucesso!");
-    fecharModal();
+    alert(
+      "ℹ️ COMO FUNCIONA A EXCLUSÃO:\n\n" +
+        "1. Confirme digitando 'EXCLUIR'\n" +
+        "2. A vaga será removida permanentemente do sistema\n" +
+        "3. Aguarde 2 segundos enquanto processamos a exclusão\n" +
+        "4. Após a exclusão, você poderá cadastrar uma nova vaga"
+    );
 
-    carregarInformacoesVaga();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Excluindo...";
+
+    setTimeout(() => {
+      localStorage.removeItem("registrovagas");
+      console.log("[v0] Vaga excluída com sucesso do sistema");
+      fecharModal();
+      alert(
+        "✅ Vaga excluída com sucesso! Agora você pode cadastrar uma nova vaga."
+      );
+      carregarInformacoesVaga();
+    }, 2000);
   });
 }
 

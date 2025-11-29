@@ -1,4 +1,3 @@
-
 const mockCadastros = [
   {
     id: 1,
@@ -8,10 +7,9 @@ const mockCadastros = [
     rg: "987654321",
     tipousuario: "Usuário Externo",
     nascimento: "2002-08-11",
-    telefone: "(11) 9876-5432"
+    telefone: "(11) 9876-5432",
   },
 ];
-
 
 let cadastroAtual = null;
 function carregarCadastros() {
@@ -26,7 +24,7 @@ function validarFormulario() {
     "rgUsuario",
     "tipoUsuario",
     "nascimentoUsuario",
-    "telefoneUsuario"
+    "telefoneUsuario",
   ];
 
   return campos.every((campo) => {
@@ -52,19 +50,28 @@ function salvarCadastro() {
   // Salvar no localStorage para simular persistência
   localStorage.setItem("cadastrousuarios", JSON.stringify(mockCadastros));
 
-  alert("✅ Cadastro atualizado com sucesso!");
-  window.location.href = "index.html";
-}
+  console.log(cadastroAtual.tipousuario);
 
+  alert("✅ Cadastro atualizado com sucesso!");
+
+  setTimeout(() => {
+    if (cadastroAtual.tipousuario === "usuarioexterno") {
+      alert("✅ Você será redirecionado para a tela de cadastro do veículo.");
+      window.location.href = "cadastro-veiculo.html";
+    } else if (cadastroAtual.tipousuario === "sindico") {
+      alert("✅ Você será redirecionado para a tela de cadastro do edíficio.");
+      window.location.href = "cadastro-edificio.html";
+    }
+  }, 1000);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   carregarCadastros();
-  setupEventListeners() 
-
+  setupEventListeners();
 });
 
-function setupEventListeners() { 
+function setupEventListeners() {
   const menuToggle = document.getElementById("menuToggle");
   const dropdownMenu = document.getElementById("dropdownMenu");
   menuToggle?.addEventListener("click", (e) => {
@@ -94,14 +101,13 @@ function toggleTheme() {
 }
 
 function openAllModals() {
-    openModal("modalGrupo");
+  openModal("modalGrupo");
 }
 
 function openModal(id) {
-    document.getElementById(id).classList.add("active");
+  document.getElementById(id).classList.add("active");
 }
 
 function closeModal(id) {
-    document.getElementById(id).classList.remove("active");
+  document.getElementById(id).classList.remove("active");
 }
-

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Funciona - ParkShare</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/como-funciona.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
+        <div class="nav-links">
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" id="themeToggle" title="Alternar tema">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                ☰
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
+                </div>
+            </div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="how-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Como Funciona o ParkShare</h1>
+            <p class="hero-subtitle">Simples, rápido e seguro. Veja como usar a plataforma em poucos passos.</p>
+        </div>
+    </section>
+
+    <!-- Selector de Perfil -->
+    <section class="profile-selector">
+        <h2 class="selector-title">Selecione seu perfil</h2>
+        <div class="profile-tabs">
+            <button class="profile-tab active" data-profile="motorista">
+                🚗 Procuro Vaga
+            </button>
+            <button class="profile-tab" data-profile="condomino">
+                🏠 Tenho Vaga
+            </button>
+            <button class="profile-tab" data-profile="sindico">
+                👔 Sou Síndico
+            </button>
+        </div>
+    </section>
+
+    <!-- Content Container -->
+    <div class="how-container">
+        <!-- Para Motoristas -->
+        <div class="profile-content active" id="motorista-content">
+            <h2 class="content-title">Para quem procura vaga</h2>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📱</div>
+                    <h3 class="step-title">Crie sua Conta</h3>
+                    <p class="step-description">
+                        Cadastre-se gratuitamente com seus dados pessoais e informações do veículo.
+                        É rápido e seguro!
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🔍</div>
+                    <h3 class="step-title">Busque Vagas</h3>
+                    <p class="step-description">
+                        Use nosso sistema de busca para encontrar vagas próximas ao seu destino.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🚗</div>
+                    <h3 class="step-title">Garanta sua Vaga</h3>
+                    <p class="step-description">
+                        Selecione o edifício desejado e visualize as vagas disponíveis para aluguel. Em seguida, escolha
+                        a vaga e informe os dias e horários dentro do período permitido pelo condomínio.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">✉️</div>
+                    <h3 class="step-title">Converse em Tempo Real</h3>
+                    <p class="step-description">
+                        Utilize nosso chat para combinar detalhes de acesso e tirar dúvidas diretamente com o
+                        proprietário da vaga.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">📲</div>
+                    <h3 class="step-title">Receba o QR Code</h3>
+                    <p class="step-description">
+                        Após a confirmação, você recebe um QR code de acesso válido para o
+                        período reservado.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-icon">🅿️</div>
+                    <h3 class="step-title">Estacione</h3>
+                    <p class="step-description">
+                        Apresente o QR code na portaria do condomínio e estacione na vaga
+                        indicada. Simples assim!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Para Condôminos -->
+        <div class="profile-content" id="condomino-content">
+            <h2 class="content-title">Para quem tem vaga disponível</h2>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3 class="step-title">Cadastre-se</h3>
+                    <p class="step-description">
+                        Crie sua conta como condômino, fornecendo dados pessoais e informações
+                        do condomínio.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✅</div>
+                    <h3 class="step-title">Obtenha Autorização</h3>
+                    <p class="step-description">
+                        Entre em contato com o síndico para solicitar autorização de
+                        compartilhamento da vaga.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📸</div>
+                    <h3 class="step-title">Cadastre sua Vaga</h3>
+                    <p class="step-description">
+                        Adicione fotos, descrição, localização exata e defina preço e
+                        disponibilidade da vaga.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🔔</div>
+                    <h3 class="step-title">Receba Pedidos</h3>
+                    <p class="step-description">
+                        Motoristas interessados entram em contato. Você escolhe aceitar ou
+                        recusar os pedidos.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">🤝</div>
+                    <h3 class="step-title">Confirme a Reserva</h3>
+                    <p class="step-description">
+                        Após acordo, confirme a reserva. O sistema gera automaticamente o
+                        QR code de acesso.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Para Síndicos -->
+        <div class="profile-content" id="sindico-content">
+            <h2 class="content-title">Para síndicos e administradores</h2>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🏢</div>
+                    <h3 class="step-title">Cadastre o Condomínio</h3>
+                    <p class="step-description">
+                        Registre o condomínio na plataforma com dados completos, fotos e
+                        informações de segurança.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">📋</div>
+                    <h3 class="step-title">Defina Regras</h3>
+                    <p class="step-description">
+                        Estabeleça as regras de uso: horários permitidos, áreas autorizadas
+                        e procedimentos de acesso.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">👥</div>
+                    <h3 class="step-title">Gerencie Solicitações</h3>
+                    <p class="step-description">
+                        Aprove ou recuse pedidos de condôminos que desejam compartilhar suas
+                        vagas.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🔐</div>
+                    <h3 class="step-title">Controle Acessos</h3>
+                    <p class="step-description">
+                        Monitore todos os acessos através do painel administrativo. Valide
+                        QR codes na portaria.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">🛡️</div>
+                    <h3 class="step-title">Garanta Segurança</h3>
+                    <p class="step-description">
+                        Mantenha o condomínio seguro com verificação de identidade e registro
+                        de todos os acessos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>É seguro usar o ParkShare?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Todas as vagas são em condomínios com portaria 24h. Verificamos a identidade
+                        de todos os usuários e mantemos registro de todos os acessos. Além disso, temos
+                        sistema de avaliações e suporte sempre disponível.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Posso cancelar uma reserva?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim, você pode cancelar com até 24h de antecedência.
+                        Cancelamentos com menos de 24h.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O que acontece se houver algum problema?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nossa equipe de suporte está disponível 24/7 através do chat, e-mail ou telefone.
+                        Mediamos qualquer conflito entre usuários e garantimos que todos sejam tratados
+                        de forma justa conforme nossos termos de uso.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto custa para usar o ParkShare?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Para motoristas, não há taxa de cadastro. Você paga apenas pelo uso da vaga.
+                        Para condôminos, cobramos uma taxa de 15% sobre o valor de cada reserva.
+                        Síndicos não pagam nada para cadastrar seus condomínios.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section">
+            <h2 class="cta-title">Pronto para começar?</h2>
+            <p class="cta-text">Junte-se a milhares de usuários que já usam o ParkShare diariamente.</p>
+            <button class="cta-btn" onclick="window.location.href='cadastro-edificio.html'">Criar Conta
+                Gratuita</button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3 class="footer-title">Sobre ParkShare</h3>
+                <p class="footer-text">
+                    Plataforma de compartilhamento de vagas de estacionamento em condomínios.
+                    Conectamos motoristas a vagas seguras e regulamentadas.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">💼</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html">Buscar Vagas</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Recursos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Buscar Vagas</a></li>
+                    <li><a href="login.html">Disponibilizar Vaga</a></li>
+                    <li><a href="login.html">Gerenciar Reservas</a></li>
+                    <li><a href="contato.html">Suporte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Contato</h3>
+                <ul class="footer-contact">
+                    <li>📞 (11) 9999-8888</li>
+                    <li>📧 suporte@park-share.com</li>
+                    <li>📍 São Paulo, SP</li>
+                    <li>🕐 Seg-Dom: 6h-22h</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 ParkShare. Todos os direitos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#privacidade">Privacidade</a>
+                <span>|</span>
+                <a href="#termos">Termos de Uso</a>
+                <span>|</span>
+                <a href="#cookies">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/como-funciona.js"></script>
+</body>
+
+</html>

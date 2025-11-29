@@ -10,7 +10,6 @@
 
 .confirmation-container {
   max-width: 1000px;
-
   margin: 0 auto;
   padding: 2rem 2rem;
   background-color: var(--card-bg);
@@ -149,6 +148,31 @@
   line-height: 1.7;
   color: var(--text-secondary);
   margin: 0;
+}
+
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 0;
+  margin-top: auto;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  gap: 2rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  flex: 1;
 }
 
 /* Responsividade */

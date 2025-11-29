@@ -12,11 +12,10 @@
 <body>
     <!-- Header -->
     <header>
-        <!-- Alterado logo e título para Park-Share -->
-        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -26,15 +25,14 @@
             <div class="menu-icon" id="menuToggle">
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <a href="#inicio" class="dropdown-item">Início</a>
-                    <a href="#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Início</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon"><a href="gerenciar-perfil-do-usuario-externo.html">👤</a></div>
-        </div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
 
@@ -44,7 +42,7 @@
             <span class="search-icon">🔍</span>
             <!-- Alterado placeholder para busca de vagas -->
             <input type="text" class="search-input" id="searchInput" placeholder="Buscar vagas por endereço...">
-            <span class="map-icon" id="mapIcon" title="Ver no mapa">🗺️</span>
+            <span class="map-icon" id="mapIcon" title="Ver no mapa"></span>
         </div>
         <div class="search-suggestions" id="searchSuggestions"></div>
     </div>
@@ -58,9 +56,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3 class="footer-title">Sobre Park-Share</h3>
+                <h3 class="footer-title">Sobre ParkShare</h3>
                 <p class="footer-text">
-                    Platform de compartilhamento de vagas de estacionamento em condomínios.
+                    Plataforma de compartilhamento de vagas de estacionamento em condomínios.
                     Conectamos motoristas a vagas seguras e regulamentadas.
                 </p>
                 <div class="footer-social">
@@ -75,21 +73,20 @@
                 <h3 class="footer-title">Links Rápidos</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#vagas">Buscar Vagas</a></li>
-                    <li><a href="profile.html">Perfis</a></li>
-                    <li><a href="#seguranca">Segurança</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="index.html">Buscar Vagas</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
                 <h3 class="footer-title">Recursos</h3>
                 <ul class="footer-links">
-                    <li><a href="#buscar">Buscar Vagas</a></li>
-                    <li><a href="#disponibilizar">Disponibilizar Vaga</a></li>
-                    <li><a href="#gerenciar">Gerenciar Reservas</a></li>
-                    <li><a href="#avaliacao">Avaliações</a></li>
-                    <li><a href="#suporte">Suporte</a></li>
+                    <li><a href="index.html">Buscar Vagas</a></li>
+                    <li><a href="login.html">Disponibilizar Vaga</a></li>
+                    <li><a href="login.html">Gerenciar Reservas</a></li>
+                    <li><a href="contato.html">Suporte</a></li>
                 </ul>
             </div>
 
@@ -105,7 +102,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Park-Share. Todos os direitos reservados.</p>
+            <p>© 2025 ParkShare. Todos os direitos reservados.</p>
             <div class="footer-bottom-links">
                 <a href="#privacidade">Privacidade</a>
                 <span>|</span>

@@ -1,76 +1,11 @@
-const mockVagas = [
-  {
-    id: 1,
-    localvaga: "Condomínio Residencial Vida Nova - Av. Paulista, 1000",
-    horainicio: "21:30",
-    horafim: "23:30",
-    datainicio: "25/06/2024",
-    datafim: "28/06/2025",
-    vaga: "23"
-  },
-];
-
-
-let registroAtual = null;
-function carregarRegistros() {
-  const registroId = localStorage.getItem("condominioEditarId") || 1;
-  registroAtual = mockVagas.find((c) => c.id == registroId);
-}
-function validarFormulario() {
-  const campos = [
-    "localVaga",
-    "datasVagaInicio",
-    "datasVagaFim",
-    "horaInicio",
-    "horaFim",
-    "idNumVaga"
-  ];
-
-  return campos.every((campo) => {
-    const valor = document.getElementById(campo).value.trim();
-    return valor !== "";
-  });
-}
-function salvarRegistro() {
-  if (!validarFormulario()) {
-    alert("Por favor, preencha todos os campos obrigatórios.");
-    return;
-  }
-
-  // Atualizar dados
-  // Atualizar dados do edifício
-  registroAtual.localvaga = document.getElementById("localVaga").value;
-  registroAtual.datainicio = document.getElementById("datasVagaInicio").value;
-  registroAtual.datafim = document.getElementById("datasVagaFim").value;
-  registroAtual.horainicio = document.getElementById("horaInicio").value;
-  registroAtual.horafim = document.getElementById("horaFim").value;
-  registroAtual.vaga = document.getElementById("idNumVaga").value;
-
-
-  localStorage.setItem("registrovagas", JSON.stringify(mockVagas));
-
-  alert("✅ Registro da Vaga atualizado com sucesso!");
-  window.location.href = "gerenciar-vaga.html";
-}
-
-
+// Inicialização
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
-  carregarRegistros();
-  setupEventListeners()
+  setupEventListeners();
+  setupCustomInputs();
 });
 
-
-function setupEventListeners() {
-  const menuToggle = document.getElementById("menuToggle");
-  const dropdownMenu = document.getElementById("dropdownMenu");
-  menuToggle?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dropdownMenu.classList.toggle("active");
-  });
-}
-
-// Tema
+// Theme
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
   document.documentElement.setAttribute("data-theme", savedTheme);
@@ -90,3 +25,91 @@ function toggleTheme() {
   localStorage.setItem("theme", newTheme);
 }
 
+// Event listeners
+function setupEventListeners() {
+  const menuToggle = document.getElementById("menuToggle");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+
+  menuToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menuToggle?.contains(e.target)) {
+      dropdownMenu?.classList.remove("active");
+    }
+  });
+}
+
+function setupCustomInputs() {
+  // Inputs de horário - abrem seletor de hora
+  const horaInicio = document.getElementById("horaInicio");
+  const horaFim = document.getElementById("horaFim");
+
+  horaInicio?.addEventListener("click", () => abrirSeletorHora("horaInicio"));
+  horaFim?.addEventListener("click", () => abrirSeletorHora("horaFim"));
+
+  // Inputs de data - abrem calendário
+  const dataInicio = document.getElementById("datasVagaInicio");
+  const dataFim = document.getElementById("datasVagaFim");
+
+  dataInicio?.addEventListener("click", () =>
+    CriarCalendario("datasVagaInicio")
+  );
+  dataFim?.addEventListener("click", () => CriarCalendario("datasVagaFim"));
+}
+
+function validarFormulario() {
+  const campos = [
+    "localVaga",
+    "pontoReferencia",
+    "idNumVaga",
+    "horaInicio",
+    "horaFim",
+    "datasVagaInicio",
+    "datasVagaFim",
+  ];
+
+  return campos.every((campo) => {
+    const valor = document.getElementById(campo).value.trim();
+    return valor !== "";
+  });
+}
+
+function salvarRegistro() {
+  if (!validarFormulario()) {
+    alert("Por favor, preencha todos os campos obrigatórios.");
+    return;
+  }
+
+  // Formatar datas para formato brasileiro
+  const dataInicio = document.getElementById("datasVagaInicio").value;
+  const dataFim = document.getElementById("datasVagaFim").value;
+
+  const formatarData = (data) => {
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
+  };
+
+  // Criar objeto de vaga
+  const vaga = {
+    id: 1,
+    localvaga: document.getElementById("localVaga").value,
+    pontoReferencia: document.getElementById("pontoReferencia").value,
+    vaga: document.getElementById("idNumVaga").value,
+    horainicio: document.getElementById("horaInicio").value,
+    horafim: document.getElementById("horaFim").value,
+    datainicio: formatarData(dataInicio),
+    datafim: formatarData(dataFim),
+  };
+
+  // Salvar no localStorage
+  localStorage.setItem("registrovagas", JSON.stringify([vaga]));
+
+  console.log("[v0] Vaga registrada:", vaga);
+  alert("✅ Vaga registrada com sucesso!");
+
+  // Redirecionar para o perfil do condômino
+  window.location.href = "gerenciar-vaga.html";
+}

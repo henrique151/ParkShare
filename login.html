@@ -15,8 +15,8 @@
     <header>
         <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -27,16 +27,16 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon"><a href="gerenciar-perfil-do-usuario-externo.html"
-                    style="text-decoration: none; color: inherit;">👤</a></div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
+
 
     <div class="auth-container">
         <div class="auth-card">
@@ -46,6 +46,9 @@
             </div>
 
             <form class="auth-form" id="loginForm">
+                <!-- Adicionando mensagem de erro no topo do formulário -->
+                <div id="loginError" class="error-message"></div>
+
                 <div class="input-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" placeholder="seu@email.com" required>
@@ -53,7 +56,21 @@
 
                 <div class="input-group">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    <!-- Adicionando wrapper para incluir ícone de olho -->
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path class="eye-open" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle class="eye-open" cx="12" cy="12" r="3"></circle>
+                                <path class="eye-closed"
+                                    d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                                    style="display: none;"></path>
+                                <line class="eye-closed" x1="1" y1="1" x2="23" y2="23" style="display: none;"></line>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form-links">
@@ -65,11 +82,14 @@
             </form>
         </div>
 
+
     </div>
     <footer class="auth-footer">
         <p>&copy; 2025 Park-Share. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Adicionado main.js para funcionalidade do header -->
+    <script src="main.js"></script>
     <script src="js/auth.js"></script>
 </body>
 

@@ -1,22 +1,21 @@
-<!DOCTYPE html> <!-- Anthony -->
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Vaga - Park-Share</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/gerenciar-vaga.css">
-    <link rel="stylesheet" href="./css/cadastro-horario.css">
+    <title>Gerenciar Perfil do Condômino | Park-Share</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/gerenciar-perfil-condomino.css">
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -27,107 +26,112 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon">👤</div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="cadastro-page">
-        <div class="cadastro-container">
+    <main class="main-container">
+        <div class="profile-container">
+            <h1 class="page-title">Gerenciar Perfil do Condômino</h1>
 
-            <!-- Content Area -->
-            <section class="content">
-                <div class="editar-header">
-                    <h1 class="content-title">Gerenciar Vaga</h1>
-                </div>
-
-                <div class="details-container">
-                    <div class="cadastro-detalhes">
-
-                        <div class="detalhes-secao">
-                            <h2 class="secao-titulo">
-                                <span class="secao-icon">📄</span>
-                                Informações da Vaga de Carlos Silva dos Santos
-                            </h2>
-
-                            <form id="formcadastroEditar" class="form-cadastro">
-
-                                <div class="form-row">
-
-                                    <!-- LOCAL -->
-                                    <div class="form-group">
-                                        <label for="localVaga">Local da Vaga</label>
-                                        <input type="text" id="localVaga" placeholder="Ex: Estacionamento A-C"
-                                            value="Nome Ficticio de um Condominio, Seção A-C" required>
-                                    </div>
-
-                                    <!-- HORÁRIOS -->
-                                    <div class="form-group time-range">
-                                        <label>Horário Inicial de Disponibilidade</label>
-
-                                        <div class="time-range-wrapper">
-                                            <input type="text" id="horaInicio" readonly
-                                                onclick="abrirSeletorHora('horaInicio')" placeholder="00:00"
-                                                value="07:30">
-                                            <span>—</span>
-                                            <input type="text" id="horaFim" readonly
-                                                onclick="abrirSeletorHora('horaFim')" placeholder="00:00" value="16:30">
-                                        </div>
-                                    </div>
-
-                                    <!-- PERÍODO -->
-                                    <div class="form-group date-range">
-                                        <label>Período Inicial de Disponiblidade</label>
-
-                                        <div class="time-range-wrapper">
-                                            <input type="date" id="datasVagaInicio" readonly
-                                                onclick="CriarCalendario('datasVagaInicio')" value="2025-11-22">
-                                            <span>—</span>
-                                            <input type="date" id="datasVagaFim" readonly
-                                                onclick="CriarCalendario('datasVagaFim')" value="2025-11-23">
-                                        </div>
-
-                                        <div class="calendar-popup" id="calendarPopup"></div>
-                                    </div>
-
-                                    <!-- NÚMERO DA VAGA -->
-                                    <div class="form-group">
-                                        <label for="idNumVaga">Número da Vaga</label>
-                                        <input type="text" id="idNumVaga" placeholder="Ex: 25" value="64" required>
-                                    </div>
-
-                                </div>
-
-                            </form>
-                        </div>
-
-                        <!-- BOTÕES DE AÇÃO -->
-                        <div class="acoes-cadastro">
-                            <button class="btn-salvar" onclick="salvarRegistro()">
-                                📝 Editar Vaga
-                            </button>
-
-                            <button class="btn-cancelar" onclick="window.location.href='cadastro-condomino.html'">
-                                ↩️ Cancelar
-                            </button>
-
-                            <button class="btn-deletar" onclick="solicitarExclusao()">
-                                ❌ Solicitar Exclusão da Vaga
-                            </button>
-
-                            <button class="btn-deletar" onclick="window.location.reload()">
-                                🔄 Reiniciar Registro
-                            </button>
-                        </div>
-
+            <!-- Suas Informações -->
+            <section class="info-section">
+                <h2 class="section-title">
+                    <span class="icon">👤</span>
+                    Suas Informações
+                </h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Nome</span>
+                        <span class="info-value" id="nomeCondomino">Carlos Silva</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">CPF</span>
+                        <span class="info-value" id="cpfCondomino">123.456.789-00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">RG</span>
+                        <span class="info-value" id="rgCondomino">12.345.678-9</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Telefone</span>
+                        <span class="info-value" id="telefoneCondomino">(11) 99999-8888</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">E-mail</span>
+                        <span class="info-value" id="emailCondomino">carlos.silva@email.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Data de Nascimento</span>
+                        <span class="info-value" id="dataNascCondomino">15/03/1990</span>
                     </div>
                 </div>
+            </section>
+
+            <!-- Informações do Condomínio e Síndico -->
+            <section class="info-section">
+                <h2 class="section-title">
+                    <span class="icon">🏢</span>
+                    Informações do Condomínio e Síndico
+                </h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Nome do Condomínio</span>
+                        <span class="info-value" id="nomeCondominio">Residencial Vista Alegre</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Endereço</span>
+                        <span class="info-value" id="enderecoCondominio">Av. Paulista, 1000 - São Paulo, SP</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nome do Síndico</span>
+                        <span class="info-value" id="nomeSindico">João Pereira</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Telefone do Síndico</span>
+                        <span class="info-value" id="telefoneSindico">(11) 98888-7777</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Ponto de Referência</span>
+                        <span class="info-value" id="pontoReferencia">Próximo ao Metrô Consolação</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Informações da Vaga -->
+            <section class="info-section">
+                <h2 class="section-title">
+                    <span class="icon">🅿️</span>
+                    Informações da Vaga
+                </h2>
+                <div id="vagaContainer">
+                    <!-- Conteúdo dinâmico: vaga cadastrada ou mensagem para cadastrar -->
+                </div>
+            </section>
+
+            <!-- Botões de Ação -->
+            <section class="actions-section">
+                <!-- Adicionado botão para editar informações do usuário -->
+                <button class="action-btn btn-edit" onclick="abrirModalEditarUsuario()">
+                    ✏️ Editar Informações do Usuário
+                </button>
+                <button class="action-btn btn-edit-vaga" onclick="abrirModalEditarVaga()" id="btnEditarVaga"
+                    style="display: none;">
+                    📝 Editar Vaga
+                </button>
+                <button class="action-btn btn-warning" onclick="abrirModalExcluirVaga()" id="btnExcluirVaga">
+                    🗑️ Solicitar Exclusão da Vaga
+                </button>
+                <button class="action-btn btn-danger" onclick="abrirModalExcluirConta()">
+                    ⚠️ Excluir Conta
+                </button>
             </section>
         </div>
     </main>
@@ -139,11 +143,20 @@
         </div>
     </footer>
 
-    <!-- JS -->
-    <div class="time-popup" id="timePopup"></div>
-    <script src="./js/gerenciar-vaga.js" defer></script>
-    <script src="./js/cadastro-horario.js" defer></script>
-    <script src="./js/cadastro-calendario.js" defer></script>
+    <!-- Modal Container -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Título</h3>
+                <button class="modal-close" onclick="fecharModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo dinâmico -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/gerenciar-perfil-condomino.js"></script>
 </body>
 
 </html>

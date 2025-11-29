@@ -1,22 +1,22 @@
-<!DOCTYPE html> <!-- Anthony -->
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Conta - Park-Share</title>
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/registrar-vaga.css">
+    <title>Registrar Vaga - Park-Share</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/registrar-vaga.css">
     <link rel="stylesheet" href="./css/cadastro-horario.css">
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <div class="logo"><a href="index.html">ParkShare</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">ParkShare</a></div>
         <div class="nav-links">
-            <button class="nav-link">Como Funciona</button>
-            <button class="nav-link">Sobre</button>
+            <button class="nav-link" onclick="window.location.href='como-funciona.html'">Como Funciona</button>
+            <button class="nav-link" onclick="window.location.href='sobre.html'">Sobre</button>
         </div>
         <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Alternar tema">
@@ -27,16 +27,15 @@
                 ☰
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="index.html" class="dropdown-item">Início</a>
-                    <a href="index.html#vagas" class="dropdown-item">Buscar Vagas</a>
-                    <a href="#como-funciona" class="dropdown-item">Como Funciona</a>
-                    <a href="#contato" class="dropdown-item">Contato</a>
-                    <a href="#faq" class="dropdown-item">FAQ</a>
+                    <a href="index.html" class="dropdown-item">Buscar Vagas</a>
+                    <a href="como-funciona.html" class="dropdown-item">Como Funciona</a>
+                    <a href="sobre.html" class="dropdown-item">Sobre</a>
+                    <a href="contato.html" class="dropdown-item">Contato</a>
                 </div>
             </div>
-            <div class="user-icon">👤</div>
+            <div class="user-icon" onclick="window.location.href='login.html'">👤</div>
         </div>
     </header>
-
 
     <!-- Main Content -->
     <main class="cadastro-page">
@@ -62,9 +61,25 @@
 
                             <form id="formcadastroEditar" class="form-cadastro">
                                 <div class="form-row">
-                                    <div class="form-group"> <label for="localVaga">Local da Vaga</label> <input
-                                            type="text" id="localVaga" placeholder="Ex: Ana Maria Paula" required>
+                                    <div class="form-group">
+                                        <label for="localVaga">Local da Vaga</label>
+                                        <input type="text" id="localVaga"
+                                            placeholder="Ex: Condomínio Residencial Vida Nova" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="pontoReferencia">Ponto de Referência</label>
+                                        <input type="text" id="pontoReferencia"
+                                            placeholder="Ex: Próximo ao Metrô Consolação" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="idNumVaga">Número da Vaga</label>
+                                        <input type="text" id="idNumVaga" placeholder="Ex: 25" required>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-row">
                                     <div class="form-group time-range"> <label>Horário Inicial de
                                             Disponibilidade</label>
                                         <div class="time-range-wrapper"> <input type="text" id="horaInicio" readonly
@@ -81,9 +96,9 @@
                                         </div>
                                         <div class="calendar-popup" id="calendarPopup"></div>
                                     </div>
-                                    <div class="form-group"> <label for="idNumVaga">Número da Vaga</label> <input
-                                            type="text" id="idNumVaga" placeholder="Ex: 25" required> </div>
                                 </div>
+
+
                             </form>
 
 
@@ -95,21 +110,16 @@
                             <button class="btn-salvar" onclick="salvarRegistro()">
                                 💾 Salvar Registro
                             </button>
-                            <button class="btn-cancelar" onclick="window.location.href='cadastro-condomino.html'">
+                            <button class="btn-cancelar" onclick="window.location.href='gerenciar-vaga.html'">
                                 ↩️ Cancelar
                             </button>
-                            <button class="btn-deletar" onclick="window.location.href='registrar-vaga.html'">
-                                🔄 Reiniciar Registro
-                            </button>
                         </div>
+
                     </div>
                 </div>
             </section>
         </div>
     </main>
-    </div>
-
-
 
     <!-- Footer -->
     <footer>
@@ -118,8 +128,6 @@
         </div>
     </footer>
 
-
-    <!-- JS carregado somente após o DOM -->
     <div class="time-popup" id="timePopup"></div>
     <script src="./js/registrar-vaga.js" defer></script>
     <script src="./js/cadastro-horario.js" defer></script>

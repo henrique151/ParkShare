@@ -16,7 +16,6 @@
   gap: 0;
 }
 
-
 /* ========================================
    CONTEÚDO PRINCIPAL
    ======================================== */
@@ -639,7 +638,6 @@ footer {
   opacity: 0.6;
 }
 
-
 @media (max-width: 768px) {
   .editar-header {
     flex-direction: column;
@@ -684,7 +682,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   padding: 0;
 }
 
@@ -751,7 +749,6 @@ footer {
   /* deixa o modal bem mais alto */
   padding-bottom: 3rem;
 }
-
 
 .modal-content.small {
   max-width: 500px;
@@ -827,7 +824,7 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 /* Animação suave quando o mouse passa */
@@ -850,4 +847,3 @@ footer {
   color: var(--text-secondary);
   line-height: 1.4;
 }
-

@@ -1,3 +1,41 @@
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function showError(elementId, message) {
+  const errorElement = document.getElementById(elementId);
+  if (errorElement) {
+    errorElement.textContent = message;
+    errorElement.classList.add("show");
+    setTimeout(() => {
+      errorElement.classList.remove("show");
+    }, 5000);
+  }
+}
+
+function setupPasswordToggle(toggleButtonId, passwordInputId) {
+  const toggleButton = document.getElementById(toggleButtonId);
+  const passwordInput = document.getElementById(passwordInputId);
+
+  if (toggleButton && passwordInput) {
+    toggleButton.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+
+      const eyeOpen = toggleButton.querySelectorAll(".eye-open");
+      const eyeClosed = toggleButton.querySelectorAll(".eye-closed");
+
+      eyeOpen.forEach((el) => (el.style.display = isPassword ? "none" : ""));
+      eyeClosed.forEach((el) => (el.style.display = isPassword ? "" : "none"));
+    });
+  }
+}
+
+setupPasswordToggle("togglePassword", "password");
+setupPasswordToggle("toggleNewPassword", "newPassword");
+setupPasswordToggle("toggleConfirmPassword", "confirmPassword");
+
 // Login Form Handler
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
@@ -7,14 +45,40 @@ if (loginForm) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    if (!isValidEmail(email)) {
+      showError(
+        "loginError",
+        "❌ E-mail inválido. Por favor, insira um e-mail válido."
+      );
+      return;
+    }
+
+    if (!password || password.length < 6) {
+      showError("loginError", "❌ A senha deve ter pelo menos 6 caracteres.");
+      return;
+    }
+
     // Simulating login - replace with actual API call
     console.log("[v0] Login attempt:", { email, password });
 
-    // Redirect based on user type (simulated)
-    // In production, this would come from the API response
     setTimeout(() => {
-      // Example: redirect to external user profile
-      window.location.href = "gerenciar-perfil-do-usuario-externo.html";
+      if (email === "usuarioexterno" && password === "admin123!") {
+        window.location.href = "administrador.html";
+      } else if (email === "sindico@gmail.com" && password === "sindico123!") {
+        window.location.href = "sindico.html";
+      } else if (email === "usuario@gmail.com" && password === "usuario123!") {
+        window.location.href = "gerenciar-perfil-do-usuario-externo.html";
+      } else if (
+        email === "condomino@gmail.com" &&
+        password === "condomino123!"
+      ) {
+        window.location.href = "gerenciar-vaga.html";
+      } else {
+        showError(
+          "loginError",
+          "❌ E-mail ou senha incorretos. Verifique suas credenciais e tente novamente."
+        );
+      }
     }, 1000);
   });
 }
@@ -95,14 +159,21 @@ if (newPasswordForm) {
     const confirmPassword = document.getElementById("confirmPassword").value;
     const errorMessage = document.getElementById("passwordError");
 
-    if (newPassword !== confirmPassword) {
-      errorMessage.textContent = "As senhas não coincidem";
+    if (!newPassword || newPassword.length < 6) {
+      errorMessage.textContent = "❌ A senha deve ter pelo menos 6 caracteres";
       errorMessage.classList.add("show");
       return;
     }
 
-    if (newPassword.length < 6) {
-      errorMessage.textContent = "A senha deve ter pelo menos 6 caracteres";
+    if (!confirmPassword) {
+      errorMessage.textContent = "❌ Por favor, confirme sua senha";
+      errorMessage.classList.add("show");
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      errorMessage.textContent =
+        "❌ As senhas não coincidem. Verifique e tente novamente.";
       errorMessage.classList.add("show");
       return;
     }
@@ -112,7 +183,7 @@ if (newPasswordForm) {
 
     // Redirect to login
     setTimeout(() => {
-      alert("Senha alterada com sucesso!");
+      alert("✅ Senha alterada com sucesso!");
       window.location.href = "login.html";
     }, 1000);
   });

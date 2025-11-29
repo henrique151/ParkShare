@@ -40,6 +40,8 @@
   --scrollbar-track: #f1f5f9;
   --scrollbar-thumb: #cbd5e1;
   --scrollbar-thumb-hover: #94a3b8;
+
+  --color-input-focus: #fff;
 }
 
 /* Cores do tema escuro */
@@ -76,6 +78,8 @@
   --scrollbar-track: #1a1a1a;
   --scrollbar-thumb: #404040;
   --scrollbar-thumb-hover: #525252;
+
+  --color-input-focus: rgba(15, 23, 42, 0.8);
 }
 
 /* ========================================
