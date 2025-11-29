@@ -1,8 +1,10 @@
-let pedidoData = null;
-let statusCondominio = false;
-let statusUsuario = false;
-let actionCallback = null;
+// Variáveis que controlam o estado do pedido
+let pedidoData = null; // Guarda os dados do pedido carregado
+let statusCondominio = false; // Status se o condomínio aprovou
+let statusUsuario = false; // Status se o usuário foi aprovado
+let actionCallback = null; // Guarda qual ação será executada após confirmação
 
+// Quando a página carrega
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   loadPedidoData();
@@ -10,21 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
   checkApprovalStatus();
 });
 
+// Carrega os dados do pedido da página anterior
 function loadPedidoData() {
   const data = localStorage.getItem("pedidoSelecionado");
 
+  // Se não tiver pedido, volta para a página de síndico
   if (!data) {
     alert("Nenhum pedido encontrado. Redirecionando...");
     window.location.href = "sindico.html";
     return;
   }
 
+  // Converte de JSON para objeto
   pedidoData = JSON.parse(data);
 
-  document.getElementById("codigoPedido").textContent =
-    pedidoData.codigo || "#PED001";
-  document.getElementById("nomeCondominio").textContent =
-    pedidoData.condominio || "José dos Santos";
+  // Preenche as informações na tela
+  document.getElementById("codigoPedido").textContent = pedidoData.codigo;
+  document.getElementById("nomeCondominio").textContent = pedidoData.condominio;
   document.getElementById("localVaga").textContent =
     pedidoData.localVaga || "10, Pátio 3";
   document.getElementById("horarioAluguel").textContent =
@@ -33,42 +37,38 @@ function loadPedidoData() {
     pedidoData.dias || "22/10/2025 a 31/12/2025";
 
   document.getElementById("nomeUsuarioExterno").textContent =
-    pedidoData.usuario || "Otávio Silva";
+    pedidoData.usuario;
   document.getElementById("modeloCarro").textContent =
     pedidoData.modeloCarro || "Porsche 911";
   document.getElementById("corCarro").textContent =
     pedidoData.corCarro || "Preto";
 
+  // Condomínio já inicia como aprovado
   statusCondominio = true;
   updateStatusCondominio();
 }
 
+// Configura todos os botões da página
 function setupEventListeners() {
+  // Abrir modais de consulta
   document
     .getElementById("consultarSindicoBtn")
-    ?.addEventListener("click", () => {
-      openModal("modalSindico");
-    });
-
+    ?.addEventListener("click", () => openModal("modalSindico"));
   document
     .getElementById("consultarUsuarioBtn")
-    ?.addEventListener("click", () => {
-      openModal("modalUsuario");
-    });
-
+    ?.addEventListener("click", () => openModal("modalUsuario"));
   document
     .getElementById("consultarVeiculoBtn")
-    ?.addEventListener("click", () => {
-      openModal("modalVeiculo");
-    });
+    ?.addEventListener("click", () => openModal("modalVeiculo"));
 
+  // Ações com modal de confirmação
   document
     .getElementById("bloquearSindicoBtn")
     ?.addEventListener("click", () => {
       showConfirmation(
         "Bloquear Síndico",
-        "Tem certeza que deseja bloquear este síndico? Esta ação não poderá ser desfeita.",
-        () => bloquearSindico()
+        "Tem certeza que deseja bloquear este síndico?",
+        bloquearSindico
       );
     });
 
@@ -78,32 +78,29 @@ function setupEventListeners() {
       showConfirmation(
         "Bloquear Usuário",
         "Tem certeza que deseja bloquear este usuário externo?",
-        () => bloquearUsuario()
+        bloquearUsuario
       );
     });
 
+  // Botões de concluir ou negar o pedido
   document.getElementById("concluirBtn")?.addEventListener("click", () => {
     showConfirmation(
       "Concluir Pedido",
-      "Tem certeza que deseja concluir este pedido? Esta ação não poderá ser desfeita.",
-      () => concluirPedido()
+      "Deseja concluir este pedido?",
+      concluirPedido
     );
   });
 
   document.getElementById("negarBtn")?.addEventListener("click", () => {
-    showConfirmation(
-      "Negar Pedido",
-      "Tem certeza que deseja negar este pedido?",
-      () => negarPedido()
-    );
+    showConfirmation("Negar Pedido", "Deseja negar este pedido?", negarPedido);
   });
 
-  // Tema
+  // Alternar tema claro/escuro
   document
     .getElementById("themeToggle")
     ?.addEventListener("click", toggleTheme);
 
-  // Menu
+  // Menu mobile
   const menuToggle = document.getElementById("menuToggle");
   const dropdownMenu = document.getElementById("dropdownMenu");
 
@@ -112,89 +109,82 @@ function setupEventListeners() {
     dropdownMenu?.classList.toggle("active");
   });
 
+  // Fecha o menu ao clicar fora
   document.addEventListener("click", (e) => {
     if (menuToggle && !menuToggle.contains(e.target)) {
       dropdownMenu?.classList.remove("active");
     }
   });
 
+  // Navegação
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      if (link.textContent === "Dashboard") {
-        window.location.href = "index.html";
-      } else if (link.textContent === "Pedidos") {
-        window.location.href = "sindico.html";
-      }
+      if (link.textContent === "Dashboard") window.location.href = "index.html";
+      if (link.textContent === "Pedidos") window.location.href = "sindico.html";
     });
   });
 
+  // Fecha modais ao clicar fora deles
   document.querySelectorAll(".modal").forEach((modal) => {
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closeModal(modal.id);
-      }
+      if (e.target === modal) closeModal(modal.id);
     });
   });
 }
 
+// Abre um modal
 function openModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.add("active");
-  }
+  document.getElementById(modalId)?.classList.add("active");
 }
 
+// Fecha um modal
 function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.remove("active");
-  }
+  document.getElementById(modalId)?.classList.remove("active");
 }
 
+// Modal de confirmação genérico
 function showConfirmation(title, message, callback) {
   document.getElementById("confirmTitle").textContent = title;
   document.getElementById("confirmMessage").textContent = message;
-  actionCallback = callback;
 
-  const confirmBtn = document.getElementById("confirmBtn");
-  confirmBtn.onclick = () => {
-    if (actionCallback) {
-      actionCallback();
-    }
+  actionCallback = callback; // Guarda ação
+
+  document.getElementById("confirmBtn").onclick = () => {
+    actionCallback();
     closeModal("modalConfirmacao");
   };
 
   openModal("modalConfirmacao");
 }
 
+// Bloqueia o síndico (mock)
 function bloquearSindico() {
-  console.log("[v0] Síndico bloqueado!");
-  alert("Síndico bloqueado com sucesso!");
+  alert("Síndico bloqueado!");
   statusCondominio = false;
   updateStatusCondominio();
   disableFinalButtons();
 }
 
+// Bloqueia o usuário (mock)
 function bloquearUsuario() {
-  console.log("[v0] Usuário externo bloqueado!");
-  alert("Usuário externo bloqueado com sucesso!");
+  alert("Usuário bloqueado!");
   statusUsuario = false;
   updateStatusUsuario();
   disableFinalButtons();
 }
 
-// Atualizar status do condomínio
+// Atualiza status visual do condomínio
 function updateStatusCondominio() {
-  const statusElement = document.getElementById("statusCondominio");
+  const el = document.getElementById("statusCondominio");
   if (statusCondominio) {
-    statusElement.textContent = "✓ Pedido Feito";
-    statusElement.className = "status-value status-done";
+    el.textContent = "✓ Pedido Feito";
+    el.className = "status-value status-done";
   }
 }
 
+// Simula aprovação automática do usuário após 3s
 function checkApprovalStatus() {
-  // Simular aprovação automática após 3 segundos (para demo)
   setTimeout(() => {
     statusUsuario = true;
     updateStatusUsuario();
@@ -202,55 +192,57 @@ function checkApprovalStatus() {
   }, 3000);
 }
 
-// Atualizar status do usuário externo
+// Atualiza status visual do usuário
 function updateStatusUsuario() {
-  const statusElement = document.getElementById("statusUsuario");
+  const el = document.getElementById("statusUsuario");
   if (statusUsuario) {
-    statusElement.textContent = "✓ Aprovado";
-    statusElement.className = "status-value status-done";
+    el.textContent = "✓ Aprovado";
+    el.className = "status-value status-done";
   } else {
-    statusElement.textContent = "⏳ Ainda não aprovado";
-    statusElement.className = "status-value status-pending";
+    el.textContent = "⏳ Ainda não aprovado";
+    el.className = "status-value status-pending";
   }
 }
 
+// Habilita botões de Concluir / Negar
 function enableFinalButtons() {
   if (statusCondominio && statusUsuario) {
     document.getElementById("concluirBtn").disabled = false;
     document.getElementById("negarBtn").disabled = false;
-    console.log("[v0] Ambas as solicitações aprovadas. Botões ativados!");
   }
 }
 
+// Desabilita botões finais
 function disableFinalButtons() {
   document.getElementById("concluirBtn").disabled = true;
   document.getElementById("negarBtn").disabled = true;
 }
 
+// Concluir pedido (mock)
 function concluirPedido() {
-  console.log("[v0] Pedido concluído com sucesso!");
-  alert("Pedido concluído com sucesso!");
+  alert("Pedido concluído!");
   localStorage.removeItem("pedidoSelecionado");
   window.location.href = "sindico.html";
 }
 
+// Negar pedido (mock)
 function negarPedido() {
-  console.log("[v0] Pedido negado!");
   alert("Pedido negado!");
   localStorage.removeItem("pedidoSelecionado");
   window.location.href = "sindico.html";
 }
 
-// Inicializar tema
+// Tema: inicializa com o último salvo
 function initTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
   document.documentElement.setAttribute("data-theme", savedTheme);
 }
 
-// Alternar tema
+// Alterna entre modo claro e escuro
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
+
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
 }

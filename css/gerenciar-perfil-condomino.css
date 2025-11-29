@@ -217,6 +217,16 @@ body {
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
 }
 
+.btn-chat {
+  background: linear-gradient(135deg, #5198e9, #264b7a);
+  color: white;
+}
+
+.btn-chat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 59, 160, 0.4);
+}
+
 .action-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;

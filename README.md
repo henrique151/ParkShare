@@ -1,39 +1,45 @@
-# ParkShare
+# ParkShare - Gestão Inteligente de Vagas de Estacionamento
 
-## Ideia do Projeto
+## Descrição
 
-O ParkShare é um sistema projetado para otimizar o gerenciamento e a utilização de vagas de estacionamento em condomínios. A ideia central é permitir que moradores e síndicos tenham uma plataforma centralizada para visualizar, alocar e administrar as vagas disponíveis, facilitando a organização e evitando conflitos. O sistema visa modernizar a forma como as vagas são compartilhadas e controladas, oferecendo uma solução digital e eficiente.
+O **ParkShare** é uma aplicação web que visa revolucionar a forma como as vagas de estacionamento em condomínios são utilizadas. A plataforma conecta motoristas a vagas ociosas, permitindo que condôminos aluguem seus espaços de forma segura e que síndicos administrem todo o processo de maneira centralizada e eficiente.
 
-## Funcionalidades do Sistema
+Construído com uma arquitetura focada na simplicidade e usabilidade, o projeto utiliza **HTML, CSS e JavaScript puro** para criar uma experiência de usuário direta e funcional. O sistema foi desenhado para ser totalmente responsivo, garantindo acesso fácil tanto em desktops quanto em dispositivos móveis. Além disso, o ParkShare integra a **API do Google Maps** para facilitar a localização de vagas próximas ao destino do usuário, otimizando o tempo e contribuindo para a redução do trânsito e da emissão de CO₂, em alinhamento com a **ODS 13 (Ação Contra a Mudança Global do Clima)**.
 
-Aqui está um resumo do que já foi implementado e do que ainda está planejado para o projeto.
+## Funcionalidades Principais
 
-### Funcionalidades Existentes
+### Para Motoristas (Usuários Externos)
 
-- **Tela de Gerenciar Síndico:** Painel para o síndico administrar funcionalidades do sistema.
-- **Tela de Gerenciar Moradores (Condôminos):** Interface para visualizar e gerenciar os moradores cadastrados.
-- **Tela de Gerenciar Vagas:** Visualização e gerenciamento das vagas de estacionamento (possivelmente através do mapa ou painel de edifício).
-- **Painel do Administrador:** Interface de administração geral do sistema.
+- **Cadastro e Autenticação:** Sistema seguro para registro e login de usuários.
+- **Busca Inteligente:** Encontre vagas disponíveis próximas ao seu destino com a integração do Google Maps.
+- **Agendamento de Vagas:** Reserve vagas por dia, horário ou período de forma intuitiva.
+- **Gerenciamento de Veículos:** Cadastre seus veículos para agilizar o processo de reserva e garantir a segurança do condomínio.
+- **Comunicação Direta:** Utilize o chat interno para negociar ou alinhar detalhes diretamente com o proprietário da vaga.
 
-- **Chat:** Funcionalidade de comunicação interna.
+### Para Condôminos (Proprietários de Vagas)
 
-### Funcionalidades Planejadas (Não implementadas)
+- **Gestão de Vagas:** Cadastre e disponibilize suas vagas de estacionamento para aluguel.
+- **Controle de Reservas:** Aprove ou recuse solicitações de aluguel com total autonomia.
+- **Visualização de Agenda:** Acompanhe o status e os horários de todas as suas vagas reservadas.
 
-- **Tela de Login:** Não tem.
-- **Tela de Registro de Usuário (Cadastro):** Não tem.
-- **Tela de Esqueci minha Senha / Recuperar Senha:** Não tem.
-- **Visualização de Perfil: Tela para os usuários verem seus próprios perfis:** Não tem. 
-- **Tela de Alterar Senha (após login):** Não tem.
-- **Tela de Registrar Condomínio:** Não tem.
-- **Tela de Gerenciar Condomínios:** Não tem.
-- **Tela de Registrar Síndico:** Não tem.
-- **Tela de Registrar Veículo:** Não tem.
-- **Tela de Registrar Local da Vaga:** Não tem.
-- **Tela de Alocar / Liberar Vaga:** Não tem. (Pode ser um card com QR Code).
-- **Tela de Gerenciar Perfil de Usuário:** Não tem.
-- **Tela de Permissões / Perfis de Acesso:** Status incerto.
+### Para Síndicos e Administradores
 
----
+- **Gerenciamento de Condomínios:** Cadastre e administre múltiplos edifícios na plataforma.
+- **Controle de Acessos:** Gerencie as contas de condôminos e usuários externos, garantindo a segurança.
+- **Moderação de Atividades:** Monitore e administre os pedidos de reserva, categorizando-os como pendentes, cancelados ou concluídos.
+
+## Arquitetura e Tecnologia
+
+- **Frontend:** A interface foi desenvolvida com **HTML5, CSS3 e JavaScript (ES6+)**, criando uma experiência de usuário fluida e responsiva sem a necessidade de frameworks complexos.
+- **Renderização no Cliente (Client-Side Rendering):** A lógica da aplicação é executada diretamente no navegador, permitindo interações dinâmicas e rápidas.
+- **Portabilidade:** O design responsivo ("Mobile First") garante que a plataforma funcione perfeitamente em smartphones, tablets e desktops.
+- **API Externa:** A **API do Google Maps** é utilizada para a funcionalidade de busca e visualização de vagas no mapa.
+
+## Tecnologias Utilizadas
+
+- **Frontend:** HTML5, CSS3, JavaScript
+- **APIs:** Google Maps API
+- **Design:** Foco em responsividade para dispositivos móveis
 
 ## 📚 Guia de Git e GitHub para Colaboradores
 

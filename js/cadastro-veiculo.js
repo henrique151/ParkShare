@@ -49,7 +49,7 @@ function salvarCadastro() {
   localStorage.setItem("cadastrousuarios", JSON.stringify(mockVeiculos));
 
   alert("✅ Cadastro atualizado com sucesso!");
-  window.location.href = "index.html";
+  window.location.href = "gerenciar-perfil-do-usuario-externo.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

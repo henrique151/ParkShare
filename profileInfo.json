@@ -11,7 +11,7 @@
   {
     "id": 2,
     "nome": "Maria Santos",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-02-01",
     "disponivel_ate": "2025-12-31",
     "dias_disponiveis": ["Seg", "Qua", "Sex"],
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "nome": "João Oliveira",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-01-20",
     "disponivel_ate": "2025-08-15",
     "dias_disponiveis": ["Ter", "Qui", "Sáb"],
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "nome": "Ana Costa",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-03-01",
     "disponivel_ate": "2025-09-30",
     "dias_disponiveis": ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "nome": "Pedro Almeida",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-01-10",
     "disponivel_ate": "2025-07-20",
     "dias_disponiveis": ["Qua", "Qui", "Sex", "Dom"],
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "nome": "Juliana Ferreira",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-02-15",
     "disponivel_ate": "2025-11-30",
     "dias_disponiveis": ["Seg", "Ter", "Qui", "Sex"],
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "nome": "Roberto Lima",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-01-05",
     "disponivel_ate": "2025-05-31",
     "dias_disponiveis": ["Seg", "Qua", "Sex", "Sáb", "Dom"],
@@ -65,7 +65,7 @@
   {
     "id": 8,
     "nome": "Fernanda Souza",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-03-10",
     "disponivel_ate": "2025-10-15",
     "dias_disponiveis": ["Ter", "Qua", "Qui", "Sex", "Sáb"],
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "nome": "Lucas Martins",
-    "imagemPerfil": "/placeholder.svg?height=120&width=120",
+    "imagemPerfil": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=880",
     "disponivel_de": "2025-01-25",
     "disponivel_ate": "2025-12-31",
     "dias_disponiveis": ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"],

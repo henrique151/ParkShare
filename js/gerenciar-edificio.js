@@ -12,7 +12,6 @@ const mockCondominios = [
     cnpj: "12.345.678/0001-90",
     totalVagas: 100,
     vagasOcupadas: 55,
-    precoVaga: 500,
     nomeSindico: "João Silva",
     emailSindico: "joao.silva@vidanova.com",
     telefoneSindico: "(11) 98765-4321",
@@ -48,7 +47,6 @@ function carregarDadosCondominio() {
       condominioAtual.vagasOcupadas;
     document.getElementById("vagasDisponiveis").value =
       condominioAtual.totalVagas - condominioAtual.vagasOcupadas;
-    document.getElementById("precoVaga").value = condominioAtual.precoVaga;
 
     document.getElementById("nomeSindico").value = condominioAtual.nomeSindico;
     document.getElementById("emailSindico").value =
@@ -80,9 +78,6 @@ function salvarCondominio() {
   condominioAtual.totalVagas = Number.parseInt(
     document.getElementById("totalVagas").value
   );
-  condominioAtual.precoVaga = Number.parseFloat(
-    document.getElementById("precoVaga").value
-  );
 
   condominioAtual.nomeSindico = document.getElementById("nomeSindico").value;
   condominioAtual.emailSindico = document.getElementById("emailSindico").value;
@@ -108,7 +103,6 @@ function validarFormulario() {
     "emailCondominio",
     "cnpjCondominio",
     "totalVagas",
-    "precoVaga",
     "nomeSindico",
     "emailSindico",
     "telefoneSindico",

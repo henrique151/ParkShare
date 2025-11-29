@@ -5,8 +5,7 @@ const mockCondominios = [
     cpf: "123.456.789-10",
     email: "jose@email.com",
     telefone: "(11) 98765-4321",
-    endereco: "Av. Paulista, 1000 - São Paulo",
-    vagas: 3,
+    numeroVaga: 101,
   },
   {
     id: 2,
@@ -14,8 +13,7 @@ const mockCondominios = [
     cpf: "234.567.890-21",
     email: "maria@email.com",
     telefone: "(11) 97654-3210",
-    endereco: "Rua Oscar Freire, 500 - São Paulo",
-    vagas: 2,
+    numeroVaga: 102,
   },
   {
     id: 3,
@@ -23,8 +21,7 @@ const mockCondominios = [
     cpf: "345.678.901-32",
     email: "carlos@email.com",
     telefone: "(11) 96543-2109",
-    endereco: "Av. Radial Leste, 579 - São Miguel",
-    vagas: 4,
+    numeroVaga: 103,
   },
   {
     id: 4,
@@ -32,8 +29,7 @@ const mockCondominios = [
     cpf: "456.789.012-43",
     email: "ana@email.com",
     telefone: "(11) 95432-1098",
-    endereco: "Estrada da Congregação, 100 - Itaquera",
-    vagas: 5,
+    numeroVaga: 104,
   },
 ];
 
@@ -75,10 +71,7 @@ function setupEventListeners() {
       const cpf = document.getElementById("cpfCondominio").value;
       const email = document.getElementById("emailCondominio").value;
       const telefone = document.getElementById("telefoneCondominio").value;
-      const endereco = document.getElementById("enderecoCondominio").value;
-      const vagas = Number.parseInt(
-        document.getElementById("vagasDisponiveis").value
-      );
+      const numeroVaga = Number(document.getElementById("numeroVagaCondominio").value);
 
       if (editingId) {
         const index = condominios.findIndex((c) => c.id === editingId);
@@ -89,8 +82,7 @@ function setupEventListeners() {
             cpf,
             email,
             telefone,
-            endereco,
-            vagas,
+            numeroVaga,
           };
           alert("Condômino atualizado com sucesso!");
           editingId = null;
@@ -102,8 +94,7 @@ function setupEventListeners() {
           cpf,
           email,
           telefone,
-          endereco,
-          vagas,
+          numeroVaga,
         };
         condominios.push(newCond);
         alert("Condômino cadastrado com sucesso!");
@@ -132,8 +123,7 @@ function renderCondominios(list = condominios) {
                 <div class="condominio-nome">${cond.nome}</div>
                 <div class="condominio-local">📱 ${cond.telefone} | 📧 ${cond.email}</div>
                 <div class="condominio-local">🆔 CPF: ${cond.cpf}</div>
-                <div class="condominio-local">📍 ${cond.endereco}</div>
-                <div class="condominio-vagas">🅿️ Vagas Alugadas: ${cond.vagas}</div>
+                <div class="condominio-local">🅿️ Vaga: ${cond.numeroVaga}</div>
             </div>
             <div class="condominio-actions">
                 <button class="btn-editar" onclick="editarCondominio(${cond.id})">Editar</button>
@@ -154,8 +144,7 @@ function editarCondominio(id) {
   document.getElementById("cpfCondominio").value = cond.cpf;
   document.getElementById("emailCondominio").value = cond.email;
   document.getElementById("telefoneCondominio").value = cond.telefone;
-  document.getElementById("enderecoCondominio").value = cond.endereco;
-  document.getElementById("vagasDisponiveis").value = cond.vagas;
+  document.getElementById("numeroVagaCondominio").value = cond.numeroVaga;
 
   openModal("cadastroCondominioModal");
 }

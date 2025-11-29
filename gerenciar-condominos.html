@@ -78,7 +78,8 @@
 
                 <!-- Condôminos List with container -->
                 <div class="details-container">
-                    <button class="btn-primary btn-novo" onclick="openCadastroCondominioModal()">+ Cadastrar Novo
+                    <button class="btn-primary btn-novo" onclick="window.location.href='cadastro-condomino.html'">+
+                        Cadastrar Novo
                         Condômino</button>
                     <div class="condominios-list" id="condominiosList">
                         <!-- Preenchido dinamicamente por JavaScript -->
@@ -95,7 +96,7 @@
                 <h2 id="modalTitle">Cadastrar Novo Condômino</h2>
                 <button class="modal-close" onclick="closeModal('cadastroCondominioModal')">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class=" modal-body">
                 <form id="cadastroCondominioForm">
                     <div class="form-group">
                         <label for="nomeCondominio">Nome do Condômino</label>
@@ -114,12 +115,8 @@
                         <input type="tel" id="telefoneCondominio" placeholder="(11) 99999-9999" required>
                     </div>
                     <div class="form-group">
-                        <label for="enderecoCondominio">Endereço</label>
-                        <input type="text" id="enderecoCondominio" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="vagasDisponiveis">Vagas Alugadas</label>
-                        <input type="number" id="vagasDisponiveis" required>
+                        <label for="numeroVagaCondominio">Número da Vaga</label>
+                        <input type="number" id="numeroVagaCondominio" placeholder="Ex: 101" required>
                     </div>
                     <div class="form-actions">
                         <button type="button" class="btn-secondary"

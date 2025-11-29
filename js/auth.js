@@ -62,7 +62,7 @@ if (loginForm) {
     console.log("[v0] Login attempt:", { email, password });
 
     setTimeout(() => {
-      if (email === "usuarioexterno" && password === "admin123!") {
+      if (email === "admin@gmail.com" && password === "admin123!") {
         window.location.href = "administrador.html";
       } else if (email === "sindico@gmail.com" && password === "sindico123!") {
         window.location.href = "sindico.html";
